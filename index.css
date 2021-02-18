@@ -54,6 +54,7 @@
 }
 
 .singleWrap {
+    cursor:pointer;
     width: 307px;
     height: 90px;
     display: flex;
