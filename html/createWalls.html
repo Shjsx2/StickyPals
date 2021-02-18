@@ -9,24 +9,30 @@
     <body>
         <div class="headerWrap">
             <img id='back' src='../icons/L/back.png'>
-            <a>UNNAMED</a>
+            <a contenteditable="true">UNNAMED</a>
             <img id ='save' src='../icons/Buttons/save.png'>
         </div>
 
         <div class="toolWrap">
             <img id='addButton' src='../icons/L/notes.png'>
             <img id='textBox'src='../icons/L/text.png'>
-            <img id ='more'src='../icons/L/more.png'>
+            <img id ='more' onclick='onMoreClick()' src='../icons/L/more.png'>
+        </div>
+        <div id='moreDropdown'>
+          <a href='#'>delete wall</a>
+          <a href='#'>publish wall</a>
         </div>
 
+
         <ul class='container'>
-            <li>
+            <li id='example1'>
               <a href="#" contenteditable="true">
                 <h1>Brainstorm idea</h1>
                 <p>goal tracking apps</p>
               </a>
             </li>
-            <li>
+            
+            <li id='example2'>
               <a href="#" contenteditable="true">
                 <h1>More ideas</h1>
                 <p>Gaming app, with a story</p>

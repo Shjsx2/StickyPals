@@ -41,9 +41,38 @@ ul li a:hover,ul li a:focus{
     background-color: #eeeeee;
 }
 
+
 #more {
     float: right;
     margin-right: 10px;
+    cursor: pointer;
+}
+
+
+.dropdownWrap {
+  position: relative;
+  display: inline-block;
+}
+
+#moreDropdown {
+  display: none;
+  position: absolute;
+  min-width: 112px;
+  right: 0px;
+  background-color: #eeeeee;
+  z-index: 1;
+}
+
+#moreDropdown a {
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+  display:block;
+  text-align:center;
+}
+
+#moreDropdown a:hover{
+  background-color: #ddd;
 }
    
 .container {
