@@ -30,5 +30,4 @@ function onSaveClick() {
     titles.push($(this).find('h1').text())
     notes.push($(this).find('p').text())
   })
-  window.localStorage.setItem('titles', titles.)
 }
