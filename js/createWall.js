@@ -19,7 +19,7 @@ function onMoreClick() {
 }
 
 function goPrevious(){
-  history.go('../index.html');
+  history.go(-1);
 }
 
 function onSaveClick() {
