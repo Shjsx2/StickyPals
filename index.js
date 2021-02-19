@@ -15,15 +15,31 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
 app.use('/icons', express.static(path.join(__dirname, 'icons')));
-app.use('/css', express.static(path.join(__dirname, 'css')))
-app.use('/js', express.static(path.join(__dirname, 'js')))
+app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/js', express.static(path.join(__dirname, 'js')));
 
 app.get('/', function(req, res) {
-    res.render('index')
+    res.render('index');
 });
 
 app.get('/createWalls', function(req,res){
-    res.render('createWalls')
+    res.render('createWalls');
+})
+
+app.get('/tutorial', function(req,res){
+  res.render('tutorial');
+})
+
+app.get('/settings', function(req,res){
+  res.render('settings');
+})
+
+app.get('/exploreCommunity', function(req,res){
+  res.render('exploreCommunity');
+})
+
+app.get('/viewGallery', function(req,res){
+  res.render('viewGallery');
 })
 // Example route
 // app.get('/users', user.list);
