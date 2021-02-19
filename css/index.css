@@ -1,8 +1,9 @@
 #topSticker {
-    height: 224px;
-    width: 307px;
+    height: 30vh;
+    width: 90vw;
     margin-top: 71px;
     margin-left: 33px;
+    margin-right: 33px;
     background-color:#e0e0e0;
     display: flex;
     flex-direction: column;
@@ -20,6 +21,7 @@
 }
 
 .buttonWrap {
+    position: relative;
     cursor: pointer;
     flex: 1;
     width: 69%;
@@ -39,14 +41,11 @@
     text-align: right;
     font-size: 36px;    
     flex: 2;
-    /* padding-top: 41px;
-    padding-bottom: 119px;
-    padding-right: 108px; */
 }
 
 .groupWrap{
-    width: 307px;
-    height: 354px;
+    width: 100vw;
+    height: 70vh;
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
