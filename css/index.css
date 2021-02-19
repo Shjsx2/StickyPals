@@ -10,7 +10,6 @@
 }
 
 .buttonWrap a {
-    font-size: 18px;
     max-width: 50%;
     top:50%;
     transform: translateY(35%);
@@ -44,7 +43,7 @@
 
 .welcomeWrap h1{
     text-align: right;
-    font-size: 36px;    
+    font-weight: bold;
     flex: 2;
 }
 
@@ -54,7 +53,7 @@
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin-left: 42px;
+    margin-left: 5vw;
 }
 
 .singleWrap {
@@ -70,8 +69,4 @@
     width: 177px;
     height: 20px;
     margin-left: 40px;
-}
-
-.textWrap a{
-    font-size:18px;
 }
