@@ -9,6 +9,7 @@ $(document).ready(function () {
   });
 
 function addNote() {
+  // todo: give random colors to new note
   var colors = ["#c4c4c4", "#f2f2f2", "#000000"]
   var c = colors[Math.floor(Math.random()*colors.length)]
   $("body ul").append("<li><a href='#' contenteditable='true'><h2>New Note</h2><p>type something...</p></a></li>");
@@ -23,6 +24,7 @@ function goPrevious(){
 }
 
 function onSaveClick() {
+  // todo: give every note an unique id and save
   var notes = $('.container li a')
   var titles =[];
   var notes = [];
