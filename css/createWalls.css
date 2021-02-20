@@ -125,3 +125,7 @@ p {
   font-size: 1em;
   text-align: left;
 }
+
+.note{
+  border: 1px;
+}
