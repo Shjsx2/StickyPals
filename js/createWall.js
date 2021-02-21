@@ -10,7 +10,7 @@ $(document).ready(function () {
 
   
 $( function() {
-  $( ".note").draggable({
+  $(".note").draggable({
       cursor: "grabbing",
       opacity: 0.5,
       //grid:[300,300],
@@ -19,7 +19,7 @@ $( function() {
   });
 } );
 
-// function addNote() {
+// function addNote() {s
 
 //   // todo: give random colors to new note
 //   var colors = ["#c4c4c4", "#f2f2f2", "#000000"]
@@ -34,8 +34,14 @@ function addNote() {
   
   var colors = ["#c4c4c4", "#f2f2f2", "#000000"]
   var c = colors[Math.floor(Math.random()*colors.length)]
-  $("body ul").append('<li> <a href="#" contenteditable="true"> <h2>New Note</h2> <p>type something...</p></a></li>');
-
+  $("body ul").append('<li class="note"> <a href="#" contenteditable="true"> <h2>New Note</h2> <p>type something...</p></a></li>');
+  $(".note").draggable({
+    cursor: "grabbing",
+    opacity: 0.5,
+    //grid:[300,300],
+    snap: true,
+    snapTolerance: 30
+});
 }
 
 function savePage(){
