@@ -41,6 +41,12 @@ app.get('/exploreCommunity', function(req,res){
 app.get('/viewGallery', function(req,res){
   res.render('viewGallery');
 })
+
+app.get('/userviews/newfile2', function(req,res){
+  res.render('/userviews/newfile2');
+})
+
+
 // Example route
 // app.get('/users', user.list);
 
