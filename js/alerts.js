@@ -36,17 +36,38 @@ function showAlert2(tag){
 }
 
 
-function saveFile(name){
-    // https://www.youtube.com/watch?v=YoVJWZrS2WU
-    name = "file1";
-    const myCanvas = document.getElementById('wallBod');
-    const myURI = myCanvas.toDataURL("image/jpeg");
-    imgConverted.src = myURI;
+// function saveFile(name){
+//     //tutorial: https://www.youtube.com/watch?v=YoVJWZrS2WU
+//     name = "file1";
+//     //const myCanvas = document.getElementById('wallBod');
+//     const myCanvas = document.querySelector("#wallBod")
+//     const myURI = myCanvas.toDataURL("image/jpeg");
+//     const imgConverted = document.querySelector("#myCanvas")
+//     imgConverted.src = myURI;
 
-    if(window.navigator.msSaveBlob(myCanvas.msToBlob(), name));
+//     if(window.navigator.msSaveBlob(myCanvas.msToBlob(), name));
 
+// }
+
+// // var btn = document.querySelector("#saveBtn");
+// const myCanvas = document.querySelector("#wallBod");
+// //const myURI = myCanvas.toDataURL("image/jpeg");
+// const imgConverted = document.querySelector("#myCanvas");
+// var btn = document.getElementById('saveBtn');
+
+// btn.addEventListener("click",function saving(){
+//     // if(window.navigator.msSaveBlob){
+//     //     window.navigator.msSaveBlob(myCanvas.msToBlob(), "foo2");
+//     // }
+
+// })
+
+function saveFile(){
+    var name = "foo3";
+    var myCanvas = document.getElementById('wallBod');
+    canvas.toBlob(function(blob){
+        saveAs(blob, name);
+    })
 }
-
-
 
 
