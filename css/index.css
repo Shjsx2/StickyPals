@@ -63,9 +63,28 @@
     flex-direction: row;
     align-items: center;
 }
+.singleWrap:hover {
+    color: grey;
+  }
 
 .textWrap {
     width: 177px;
     height: 20px;
     margin-left: 40px;
 }
+
+.alertBox{
+    position: fixed;
+    width: 256px;
+    height: 130px;
+    background-color: darkgray;
+    display:none;
+    top: 40%;
+    left: 40%;
+    /* justify-content: center; */
+  }
+  
+  .rightalign {
+    font-size: 1em;
+    text-align: right;
+  }

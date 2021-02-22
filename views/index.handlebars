@@ -3,6 +3,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="../css/index.css">
+        <script src="../js/home.js" async = "true"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       </head>
     <body>
         <div id="topSticker">
@@ -19,10 +21,21 @@
             </div>
         </div>
         
+        {{!-- alert --}}
+        <div class = "alertBox" id = "alert"> 
+            <p>Would you like to create a wall?</p>
+            <button onclick="location.href='/createWalls';">
+            Yes
+            </button>
+            <button onclick = "hideAlert()">
+            No
+            </button>
+        </div>
+        {{!-- main buttons --}}
         <div class ="groupWrap">
-            <div onclick="location.href='/createWalls';" class="singleWrap">
+            <div  class="singleWrap" onclick="showAlert()">
                 <img src='icons/redirect.png'>
-                <a class="textWrap">Create Walls</a>
+                <a class="textWrap"  >Create Walls</a>
             </div>
             <div onclick="location.href='/viewGallery';" class="singleWrap">
                 <img src='icons/redirect.png'>
@@ -33,6 +46,8 @@
                 <a class="textWrap">Explore Community</a>
             </div>
         </div>
+
+
 
     </body>
 </html>
