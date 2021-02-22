@@ -11,15 +11,17 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
     
     <head>
         <link rel="stylesheet" href="../css/createWalls.css">
-        <script src="../js/createWall.js" async = "true"></script>
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="../js/createWall.js" ></script>
+        <script src="../js/alerts.js" ></script>
     </head>
     <body id = "wallBod">
         <div class="headerWrap">
             <img id='back' src='../icons/L/back.png'>
-            <a contenteditable="true">UNNAMED</a>
-            <img id ='save' src='../icons/Buttons/save.png' onclick="savePage()">
-
-            <h3 onclick="location.href='/userviews/newfile2';">Go to new file</h3>
+            <a contenteditable="true">Untitled Wall</a>
+            <img id ='save' src='../icons/Buttons/save.png' onclick="saveFile('foo')">
+            {{!-- debug
+            <h3 onclick="location.href='/userviews/newfile2';">Go to new file</h3> --}}
         </div>
 
         <div class="toolWrap">
@@ -28,8 +30,8 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
             <img id ='more' onclick='onMoreClick()' src='../icons/L/more.png'>
         </div>
         <div id='moreDropdown'>
-          <a href='#'>delete wall</a>
-          <a href='#'>publish wall</a>
+          <a id = "del" onclick = "showAlert('#alert')">delete wall</a>
+          <a id = "pub" onclick="showAlert2('#savealert')">publish wall</a>
         </div>
 
 
@@ -50,6 +52,17 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
 
             </li>
           </ul>
+
+          <div id = "alert" class = "alertBox">
+            <p>Are you sure you want to delete this wall?</p>
+            <button onclick="location.href='/createWalls';" >Yes</button>
+            <button onclick = "hideAlert()">No</button>
+          </div>
+
+          <h2 class = "redletters" id = "red">Your wall was deleted</h2>
+          <div class = "alertBox" id = "savealert">
+            <h3>Your wall has been published!</h3>
+          </div>
 
     </body>
 </html>

@@ -11,6 +11,7 @@
     flex-direction: row;
     align-items: center;
     transform: translateX(-2%) translateY(-5%);
+    
 }
 
 #addButton{
@@ -126,7 +127,14 @@ p {
   text-align: left;
 }
 
-
 .note{
   border: 1px;
+}
+
+.redletters{
+  color: red;
+  display: none;
+  position:fixed;
+  top: 40%;
+  left: 40%;
 }
