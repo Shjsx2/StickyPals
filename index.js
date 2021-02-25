@@ -35,11 +35,11 @@ app.get('/settings', function(req,res){
 })
 
 app.get('/exploreCommunity', function(req,res){
-  res.render('exploreCommunity');
+  res.render('exploreCommunity', require('./communityData.json'));
 })
 
 app.get('/viewGallery', function(req,res){
-  res.render('viewGallery', require('./data.json'));
+  res.render('viewGallery', require('./galleryData.json'));
 })
 
 app.get('/userviews/newfile2', function(req,res){
