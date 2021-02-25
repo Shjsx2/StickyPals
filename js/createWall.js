@@ -4,11 +4,11 @@ $(document).ready(function () {
     saveButton = $("#save");
     back = $("#back");
     text = $("#textBox");
-    deleteNote = $("delete");
+    dragNote = $("#drag");
     addButton.click(addNote);
     back.click(goPrevious);
     saveButton.click(onSaveClick);
-    deleteNote.click(deleteNotes);
+    dragNote.click(dragNotes);
     //DnD
     var noteList = $('#noteList');
     noteList.on('touchmove', function(e){
@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     notes = JSON.parse(window.localStorage.getItem('notes'));
     notes.forEach(function(note) {
-      addNote(null, note.title, note.img, note.text)
+      addNote(null, note.title, note.text)
     })
 })
 
@@ -52,6 +52,7 @@ $(document).ready(function () {
 // }
 /*"<li class = 'note ui-draggable ui-draggable-handle' style='position: relative; opacity: 1; >> <a href='#' contenteditable='true'><h2>New Note</h2><p>type something...</p></a></li>"*/
 
+//adddNotes
 function addNote(e, title='new note', text='type something....') {
   // todo: give random colors to new note
   console.log("loading "+title)
@@ -59,6 +60,7 @@ function addNote(e, title='new note', text='type something....') {
   var c = colors[Math.floor(Math.random()*colors.length)]
   $("body ul").append('<li class="note"><img class="deleteButton" src="../icons/L/delete.png" contenteditable="false"><a href="#" contenteditable="true"><h2>'+title+'</h2><p>'+text+'</p></a></li>');
   $(".deleteButton").click(deleteNotes)
+  // $(".dragButton").click(dragNotes)
 }
 
 function onMoreClick() {
@@ -71,12 +73,10 @@ function goPrevious(){
 
 function onSaveClick() {
   // todo: give every note an unique id and save
-  var notes = $('.container li a')
   var notes = []
   $('.container li a').each(function(idx){
     var title = $(this).find('h2').text()
     var text = $(this).find('p').text()
-    var image = $("img[src$ = '../icons/L/delete.png']")
     notes.push({'title': title, 'text': text})
   })
   window.localStorage.setItem('notes', JSON.stringify(notes))
@@ -97,4 +97,18 @@ function onSaveClick() {
 function deleteNotes(e) {
   $(this).closest('.note').remove()
 }
+
+function dragNotes(e) {
+  var notes = []
+  $('.container li').each(function(idx){
+    if (!($(this).data('ui-draggable'))) {
+      $(this).draggable()
+    } else if ($(this).data("ui-draggable").options.disabled){
+      $(this).draggable("enable")
+    } else {
+      $(this).draggable("disable")
+    } 
+  })
+}
+
 
