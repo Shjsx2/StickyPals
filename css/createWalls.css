@@ -129,3 +129,8 @@ p {
 .note{
   border: 1px;
 }
+
+#noteList {
+  position: absolute;
+  background-color: aqua;
+}

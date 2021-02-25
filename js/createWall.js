@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
     addButton = $("#addButton");
     saveButton = $("#save")
@@ -7,32 +5,39 @@ $(document).ready(function () {
     text = $("#textBox");
     addButton.click(addNote);
     back.click(goPrevious);
-    saveButton.click(onSaveClick)
+    saveButton.click(onSaveClick);
+    //DnD
+    var noteList = $('#noteList');
+    noteList.on('touchmove', function(e) {
+    })
 
     notes = JSON.parse(window.localStorage.getItem('notes'));
     notes.forEach(function(note) {
       addNote(null, note.title, note.text)
     })
-    $('.note').on('focus', function(e){
-      $(this).parent().attr('draggable', 'false')
-    })
+})
 
-    $('.note').on('blur', function(e){
-      $(this).parent().attr('draggable', 'true')
-    })
-  });
+  //draggable 
+  // $( function() {
+  //   $(".note").draggable({
+  //       cursor: "grabbing",
+  //       opacity: 0.5,
+  //       //grid:[300,300],
+  //       snap: true,
+  //       snapTolerance: 30
+  //   });
+  // } );
 
-  
-// $( function() {
-//   $(".note").draggable({
-//       cursor: "grabbing",
-//       opacity: 0.5,
-//       //grid:[300,300],
-//       snap: true,
-//       snapTolerance: 30
-//   });
-// } );
+  //   $('.note').on('focus', function(e){
+  //     $(this).parent().attr('draggable', 'false')
+  //   })
 
+  //   $('.note').on('blur', function(e){
+  //     $(this).parent().attr('draggable', 'true')
+  //   })
+  // });
+
+//addNote with draggable
 // function addNote() {s
 
 //   // todo: give random colors to new note
@@ -70,4 +75,17 @@ function onSaveClick() {
   })
   window.localStorage.setItem('notes', JSON.stringify(notes))
 }
+
+//touch API not wokring 
+noteList.addEventListener('touchmove' , function(e){
+   var location = e.targetTouch[0];
+   noteList.style.left = location.pageX + 'px';
+   noteList.style.top = location.pageY + 'px';
+})
+
+noteList.addEventListener('touchEnd' , function(e){
+   var x = parseInt(noteList.style.left);
+   var y = parseInt(noteList.style.top);
+ })
+
 
