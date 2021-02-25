@@ -94,10 +94,12 @@ function onSaveClick() {
 //    var y = parseInt(noteList.style.top);
 //  })
 
+//delete
 function deleteNotes(e) {
   $(this).closest('.note').remove()
 }
 
+//draggable
 function dragNotes(e) {
   var notes = []
   $('.container li').each(function(idx){
