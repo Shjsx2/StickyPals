@@ -11,6 +11,7 @@
     flex-direction: row;
     align-items: center;
     transform: translateX(-2%) translateY(-5%);
+    
 }
 
 #addButton{
@@ -133,4 +134,12 @@ p {
 #noteList {
   position: absolute;
   background-color: aqua;
+}
+
+.redletters{
+  color: red;
+  display: none;
+  position:fixed;
+  top: 40%;
+  left: 40%;
 }
