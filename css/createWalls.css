@@ -22,7 +22,11 @@
   cursor: pointer;
 }
 
-#textBox{
+#delete{
+  cursor: pointer;
+}
+
+#drag{
   cursor: pointer;
 }
 
@@ -131,10 +135,10 @@ p {
   border: 1px;
 }
 
-#noteList {
+/* #noteList {
   position: absolute;
   background-color: aqua;
-}
+} */
 
 .redletters{
   color: red;
@@ -143,3 +147,4 @@ p {
   top: 40%;
   left: 40%;
 }
+

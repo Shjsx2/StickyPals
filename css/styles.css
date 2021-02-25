@@ -91,21 +91,6 @@
     text-align: right;
   }
 
-  .project{
-    position: static;
-    width: 375px;
-    height: 127px;
-    left: 0px;
-    top: 108px;
-    outline: 3px;
-    text-align: center;
-    vertical-align: center;
-    background-color:#e0e0e0;
-    margin: 10px;
-    
-    
-  }
-
 .capsule{
     position: static;
     width: 319px;

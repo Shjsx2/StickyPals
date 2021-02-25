@@ -39,7 +39,7 @@ app.get('/exploreCommunity', function(req,res){
 })
 
 app.get('/viewGallery', function(req,res){
-  res.render('viewGallery');
+  res.render('viewGallery', require('./data.json'));
 })
 
 app.get('/userviews/newfile2', function(req,res){

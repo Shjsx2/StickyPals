@@ -1,14 +1,19 @@
+
+
 $(document).ready(function () {
     addButton = $("#addButton");
-    saveButton = $("#save")
+    saveButton = $("#save");
     back = $("#back");
     text = $("#textBox");
+    deleteNote = $("delete");
     addButton.click(addNote);
     back.click(goPrevious);
     saveButton.click(onSaveClick);
+    deleteNote.click(deleteNotes);
     //DnD
     var noteList = $('#noteList');
-    noteList.on('touchmove', function(e) {
+    noteList.on('touchmove', function(e){
+        console.log("hi")
     })
 
     notes = JSON.parse(window.localStorage.getItem('notes'));
@@ -77,15 +82,18 @@ function onSaveClick() {
 }
 
 //touch API not wokring 
-noteList.addEventListener('touchmove' , function(e){
-   var location = e.targetTouch[0];
-   noteList.style.left = location.pageX + 'px';
-   noteList.style.top = location.pageY + 'px';
-})
+// noteList.addEventListener('touchmove' , function(e){
+//    var location = e.targetTouch[0];
+//    noteList.style.left = location.pageX + 'px';
+//    noteList.style.top = location.pageY + 'px';
+// })
 
-noteList.addEventListener('touchEnd' , function(e){
-   var x = parseInt(noteList.style.left);
-   var y = parseInt(noteList.style.top);
- })
+// noteList.addEventListener('touchEnd' , function(e){
+//    var x = parseInt(noteList.style.left);
+//    var y = parseInt(noteList.style.top);
+//  })
 
+function deleteNotes() {
+  $('this').closest('li').remove()
+}
 
