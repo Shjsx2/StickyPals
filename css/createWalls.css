@@ -28,13 +28,13 @@
 #drag{
   cursor: pointer;
 }
-
+/* 
 ul li a:hover,ul li a:focus{
     position:relative;
-    z-index:5;
+    z-index:2;
     transition: transform .15s linear;
     transform: scale(1.1);
-}
+} */
 
 #back{
     max-width: 40px;
@@ -145,5 +145,13 @@ p {
   position:fixed;
   top: 40%;
   left: 40%;
+}
+
+h2 {
+  margin-block-start: 0.83em;
+}
+
+.deleteButton{
+  float: right;
 }
 

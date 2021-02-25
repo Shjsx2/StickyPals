@@ -1,5 +1,4 @@
 
-
 $(document).ready(function () {
     addButton = $("#addButton");
     saveButton = $("#save");
@@ -18,7 +17,7 @@ $(document).ready(function () {
 
     notes = JSON.parse(window.localStorage.getItem('notes'));
     notes.forEach(function(note) {
-      addNote(null, note.title, note.text)
+      addNote(null, note.title, note.img, note.text)
     })
 })
 
@@ -58,7 +57,8 @@ function addNote(e, title='new note', text='type something....') {
   console.log("loading "+title)
   var colors = ["#c4c4c4", "#f2f2f2", "#000000"]
   var c = colors[Math.floor(Math.random()*colors.length)]
-  $("body ul").append('<li class="note"> <a href="#" contenteditable="true"><h2>'+title+'</h2><p>'+text+'</p></a></li>');
+  $("body ul").append('<li class="note"><img class="deleteButton" src="../icons/L/delete.png" contenteditable="false"><a href="#" contenteditable="true"><h2>'+title+'</h2><p>'+text+'</p></a></li>');
+  $(".deleteButton").click(deleteNotes)
 }
 
 function onMoreClick() {
@@ -76,6 +76,7 @@ function onSaveClick() {
   $('.container li a').each(function(idx){
     var title = $(this).find('h2').text()
     var text = $(this).find('p').text()
+    var image = $("img[src$ = '../icons/L/delete.png']")
     notes.push({'title': title, 'text': text})
   })
   window.localStorage.setItem('notes', JSON.stringify(notes))
@@ -93,7 +94,7 @@ function onSaveClick() {
 //    var y = parseInt(noteList.style.top);
 //  })
 
-function deleteNotes() {
-  $('this').closest('li').remove()
+function deleteNotes(e) {
+  $(this).closest('.note').remove()
 }
 
