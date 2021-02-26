@@ -26,7 +26,7 @@ $(document).ready(function () {
           notes = gallery[key]
         }
     }
-    if(Object.keys(notes).length === 0) return;
+    if(!notes || Object.keys(notes).length === 0) return;
     notes.forEach(function(note) {
       addNote(null, note.title, note.text)
     })
