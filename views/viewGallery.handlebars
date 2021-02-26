@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="../css/styles.css">
         <script src="../js/createWall.js" ></script>
         <script src="../js/alerts.js" ></script>
+        <script src="../js/gallery.js"></script>
 
     </head>
 
@@ -18,14 +19,15 @@
         <div class="headerWrap">
             <img id='back' src='../icons/L/back.png'>          
         </div>
+        <h3>Using "save" button in a new wall to create your own gallery!</h3>
 
 
-        {{#each project}}
+        {{!-- {{#each project}}
 		    <div class= "project">
-			    <a href='#'><h3>{{name}}</h3></a>
+			    <a href='#' onclick="window.localStorage.setItem('currentWall', $(this).text());location.href='/createWalls'"><h3>{{name}}</h3></a>
 			    <p>{{dates}}</p>
 		    </div>
-	    {{/each}}
+	    {{/each}} --}}
 
     </body>
 </html>

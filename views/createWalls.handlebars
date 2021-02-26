@@ -21,7 +21,7 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
         <div class="headerWrap">
             <img id='back' src='../icons/L/back.png'>
             <a contenteditable="true" style="text-decoration: underline;">UNNAMED</a>
-            <img id ='save' src='../icons/Buttons/save.png' onclick="showAlert2('#saveAlert')">
+            <img id ='save' src='../icons/Buttons/save.png'>
         </div>
 
         <div class="toolWrap">
@@ -30,8 +30,8 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
             <img id ='more' onclick='onMoreClick()' src='../icons/L/more.png'>
         </div>
         <div id='moreDropdown'>
-          <a id = "del" onclick = "showAlert('#alert')">delete wall</a>
-          <a id = "pub" onclick="showAlert2('#publishAlert')">publish wall</a>
+          <a id = "del" onclick="showAlert('#alert')">delete wall</a>
+          <a id = "pub" onclick="publishThis()">publish wall</a>
         </div>
 
 
@@ -62,7 +62,7 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
           </div> --}}
 
           {{!-- deleteAlert --}}
-          <div class="card" id = "alert" style="width: 18rem;">
+          <div class="card" id = "alert" style="width: 18rem;z-index: 9999;">
             <div class="card-body">
                 <p class="card-text">Are you sure you want to delete this wall?</p>
                 <div class="alert-button-wrap">
@@ -75,14 +75,14 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
           {{!-- not implemented yet --}}
           <h2 class = "redletters" id = "red">Your wall was deleted</h2>
 
-          {{!-- saveAlert --}}
-          <div class = "alert alert-info" id = "saveAlert" role="alert" style="position: fixed; left:29%;">
+          {{!-- saveAlert doesnt work after adding notes--}}
+          {{!-- <div class = "alert alert-info" id="saveAlert" role="alert" style="position: fixed; left:29%; z-index=9999;">
             Your wall is saved locally!
-          </div>
+          </div> --}}
 
-          {{!-- publishAlert --}}
-          <div class = "alert alert-info" id = "publishAlert" role="alert" style="position: fixed; left:26%;">
+          {{!-- publishAlert doesnt work after adding notes--}}
+          {{!-- <div class = "alert alert-info" id="publishAlert" role="alert" style="position: fixed; left:26%; margin-top:10px;z-index:9999;">
             Your wall has been published!
-          </div>
+          </div> --}}
     </body>
 </html>

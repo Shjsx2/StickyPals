@@ -60,7 +60,6 @@ ul li a:hover,ul li a:focus{
     /* transform: translate(-2%, -5%); */
 }
 
-
 #more {
     float: right;
     margin-right: 10px;
@@ -99,6 +98,7 @@ ul li a:hover,ul li a:focus{
   flex-wrap: wrap;
   justify-content: center;
   padding-inline-start: 0;
+  z-index: 2;
 }
 
 .container li{
@@ -117,6 +117,7 @@ ul li a:hover,ul li a:focus{
 
 ul li{
   margin: 5%;
+  z-index: 1;
 }
 
 h1 {
@@ -131,6 +132,7 @@ p {
 
 .note{
   border: 1px;
+  z-index: 1;
 }
 
 /* #noteList {

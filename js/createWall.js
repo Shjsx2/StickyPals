@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     addButton = $("#addButton");
     saveButton = $("#save");
@@ -14,9 +13,20 @@ $(document).ready(function () {
     noteList.on('touchmove', function(e){
         console.log("hi")
     })
+    $("#alert").hide();
 
-    notes = JSON.parse(window.localStorage.getItem('notes'));
-    if(!notes) return;
+    wallTitle = window.localStorage.getItem("currentWall")
+    $('.headerWrap a').text(wallTitle==="null" ? "UNNAMED" : wallTitle)
+
+    if(!wallTitle) return;
+    gallery = JSON.parse(window.localStorage.getItem('gallery'));
+    notes = null;
+    for(var key in gallery){
+        if(key === wallTitle){
+          notes = gallery[key]
+        }
+    }
+    if(Object.keys(notes).length === 0) return;
     notes.forEach(function(note) {
       addNote(null, note.title, note.text)
     })
@@ -75,12 +85,24 @@ function goPrevious(){
 function onSaveClick() {
   // todo: give every note an unique id and save
   var notes = []
+  var wallTitle = $(".headerWrap a").text();
   $('.container li a').each(function(idx){
     var title = $(this).find('h2').text()
     var text = $(this).find('p').text()
     notes.push({'title': title, 'text': text})
   })
-  window.localStorage.setItem('notes', JSON.stringify(notes))
+  var current = JSON.parse(window.localStorage.getItem("gallery"))
+  console.log(current)
+  if(!current) current = {};
+
+  if(notes.length === 0)
+    current[wallTitle] = {}
+  else
+    current[wallTitle] = notes
+
+  console.log(current)
+  window.localStorage.setItem('gallery', JSON.stringify(current))
+  alert("Notes saved to local storage")
 }
 
 //touch API not wokring 
@@ -113,5 +135,10 @@ function dragNotes(e) {
     } 
   })
 }
+
+//publishAlert
+  function publishThis() {
+    alert("Your wall has been published!");
+  }
 
 
