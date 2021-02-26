@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    transform: translateX(-2%) translateY(-5%);
+    /* transform: translateX(-2%) translateY(-5%); */
 }
 
 #addButton{
@@ -57,7 +57,7 @@ ul li a:hover,ul li a:focus{
     width: 100vw;
     height: 48px;
     background-color: #eeeeee;
-    transform: translate(-2%, -5%);
+    /* transform: translate(-2%, -5%); */
 }
 
 
