@@ -16,6 +16,7 @@ $(document).ready(function () {
     })
 
     notes = JSON.parse(window.localStorage.getItem('notes'));
+    if(!notes) return;
     notes.forEach(function(note) {
       addNote(null, note.title, note.text)
     })
