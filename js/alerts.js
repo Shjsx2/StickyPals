@@ -64,12 +64,6 @@ function showAlert2(tag){
 
 //convert body to canvas first
 
-function saveFile(){
-    var name = "foo3";
-    var myCanvas = document.getElementById('wallBod');
-    canvas.toBlob(function(blob){
-        saveAs(blob, name);
-    })
-}
+
 
 

@@ -42,8 +42,9 @@ app.get('/viewGallery', function(req,res){
   res.render('viewGallery');
 })
 
-app.get('/userviews/newfile2', function(req,res){
-  res.render('/userviews/newfile2');
+
+app.get('/samplePage', function(req,res){
+  res.render('samplePage');
 })
 
 
