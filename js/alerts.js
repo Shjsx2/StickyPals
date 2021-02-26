@@ -51,7 +51,14 @@ function saveFile(name){
     imgConverted.src = myURI;
 
     if(window.navigator.msSaveBlob(myCanvas.msToBlob(), name));
+}
 
+function checkReload() {
+    if ($('#alert1').check == false) {
+        $('#alert1').display = "block";
+    }else{
+        $('#alert1').display = "none";
+    }
 }
 
 
