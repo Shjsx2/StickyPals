@@ -18,6 +18,13 @@
 //     });
 //   });
 
+$(document).ready(function() {
+    $("#alert1").hide()
+    $("#alert").hide()
+    $("#publishAlert").hide()
+    $("#saveAlert").hide()
+})
+
 function hideAlert(tag){
     $(tag).fadeOut();
 }

@@ -14,12 +14,14 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
         <link rel="stylesheet" href="../css/styles.css">
         <script src="../js/createWall.js" ></script>
         <script src="../js/alerts.js" ></script>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
     <body id = "wallBod">
         <div class="headerWrap">
             <img id='back' src='../icons/L/back.png'>
-            <a contenteditable="true">UNNAMED</a>
-            <img id ='save' src='../icons/Buttons/save.png'>
+            <a contenteditable="true" style="text-decoration: underline;">UNNAMED</a>
+            <img id ='save' src='../icons/Buttons/save.png' onclick="showAlert2('#saveAlert')">
         </div>
 
         <div class="toolWrap">
@@ -29,13 +31,14 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
         </div>
         <div id='moreDropdown'>
           <a id = "del" onclick = "showAlert('#alert')">delete wall</a>
-          <a id = "pub" onclick="showAlert2('#savealert')">publish wall</a>
+          <a id = "pub" onclick="showAlert2('#publishAlert')">publish wall</a>
         </div>
 
 
         <ul class='container' >
           <div id='noteList'> 
           </div>
+            {{!-- sampleNotes --}}
             {{!-- <li class = "note">
               <a href="#" contenteditable="true">
                 <h1>Brainstorm idea</h1>
@@ -52,16 +55,34 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
             </li> --}}
         </ul>
 
-          <div id = "alert" class = "alertBox">
+          {{!-- <div id = "alert" class = "alertBox">
             <p>Are you sure you want to delete this wall?</p>
             <button onclick="location.href='/index';" >Yes</button>
             <button onclick = "hideAlert()">No</button>
-          </div>
+          </div> --}}
 
+          {{!-- deleteAlert --}}
+          <div class="card" id = "alert" style="width: 18rem;">
+            <div class="card-body">
+                <p class="card-text">Are you sure you want to delete this wall?</p>
+                <div class="alert-button-wrap">
+                    <button class="btn btn-info" id = "noButton"onclick = "hideAlert('#alert')">No</button>
+                    <button class="btn btn-outline-info" id = "yesButton" onclick="location.href='/index';">Yes</button>
+                </div>
+            </div>
+        </div>
+
+          {{!-- not implemented yet --}}
           <h2 class = "redletters" id = "red">Your wall was deleted</h2>
-          <div class = "alertBox" id = "savealert">
-            <h3>Your wall has been published!</h3>
+
+          {{!-- saveAlert --}}
+          <div class = "alert alert-info" id = "saveAlert" role="alert" style="position: fixed; left:29%;">
+            Your wall is saved locally!
           </div>
 
+          {{!-- publishAlert --}}
+          <div class = "alert alert-info" id = "publishAlert" role="alert" style="position: fixed; left:26%;">
+            Your wall has been published!
+          </div>
     </body>
 </html>

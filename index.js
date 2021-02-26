@@ -46,6 +46,10 @@ app.get('/viewGallery', function(req,res){
   res.render('viewGallery', require('./galleryData.json'));
 })
 
+app.get('/signup', function(req,res){
+  res.render('signup');
+})
+
 // Example route
 // app.get('/users', user.list);
 
