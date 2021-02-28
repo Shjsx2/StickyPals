@@ -23,9 +23,7 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
             <img id='back' src='../icons/L/back.png'>
 <!--             <a contenteditable="true">UNNAMED</a>
             <img onclick = "addWall()" id ='save' src='../icons/Buttons/save.png'>
-
             <h3 onclick="location.href='samplePage';">Go to new file</h3> -->
-
             <a contenteditable="true" style="text-decoration: underline;">UNNAMED</a>
             <img id ='save' src='../icons/Buttons/save.png'>
         </div>
@@ -40,9 +38,10 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
           <a id = "pub" onclick="publishThis()">publish wall</a>
         </div>
 
-        <div id = "noteList" >
+{{!-- list of notes --}}
+        {{!-- <div id = "noteList" >
           <ul class='container' >
-              {{!-- <li class = "note">
+               <li class = "note">
                 <a href="#" contenteditable="true">
                   <h1>Brainstorm idea</h1>
                   <p>goal tracking apps</p>
@@ -54,14 +53,17 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
                   <h1>More ideas</h1>
                   <p>Gaming app, with a story</p>
                 </a>
+             </li>
 
-<!--               </li> --}}
+             
           </ul >
-        </div> -->
+        </div> --}}
+
+
         <ul class='container' >
           <div id='noteList'> 
           </div>
-            {{!-- sampleNotes --}}
+            {{! --sampleNotes --}}
             {{!-- <li class = "note">
               <a href="#" contenteditable="true">
                 <h1>Brainstorm idea</h1>
@@ -75,14 +77,15 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
                 <p>Gaming app, with a story</p>
               </a>
 
-            </li> --}}
+            </li>  --}}
         </ul>
 
+          {{!-- alerts --}}
           {{!-- <div id = "alert" class = "alertBox">
             <p>Are you sure you want to delete this wall?</p>
             <button onclick="location.href='/index';" >Yes</button>
             <button onclick = "hideAlert()">No</button>
-          </div> --}}
+          </div>  --}}
 
           {{!-- deleteAlert --}}
           <div class="card" id = "alert" style="width: 18rem;z-index: 9999;">
@@ -108,8 +111,11 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
           </div> --}}
 
           {{!-- publishAlert doesnt work after adding notes--}}
-          {{!-- <div class = "alert alert-info" id="publishAlert" role="alert" style="position: fixed; left:26%; margin-top:10px;z-index:9999;">
+           {{!-- <div class = "alert alert-info" id="publishAlert" role="alert" style="position: fixed; left:26%; margin-top:10px;z-index:9999;">
             Your wall has been published!
           </div> --}}
-    </body>
+
+
+
+  </body>
 </html>
