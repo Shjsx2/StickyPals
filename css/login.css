@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+    color: #17a2b8;
+}
+
+.loginText {
+    margin-top: 8em;
+    margin-bottom: 2em;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+body {
+    margin-top: 5em;
+    display: table-cell;
+    vertical-align: center;
+}
+
+.userInput {
+    margin-bottom: 2em;
+}
+
+.userInput input::placeholder {
+    color: #9dc4ca
+}
+
+#createAccount {
+    color: #17a2b8;
+}

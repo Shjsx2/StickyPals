@@ -34,6 +34,7 @@
     position:relative
 }
 
+
 .welcomeWrap {  
     align-self: flex-start;
     flex: 3;
@@ -43,6 +44,7 @@
 .welcomeWrap h1{
     text-align: right;
     font-weight: bold;
+    margin-top: 7%;
     flex: 2;
 }
 
@@ -73,49 +75,44 @@
     margin-left: 40px;
 }
 
-.alertBox{
-    position: fixed;
-    width: 256px;
-    height: 130px;
+/* .alertBox{
+    width: 300px;
+    height: 100px;
     background-color: darkgray;
     display:none;
     top: 40%;
-    left: 40%;
+    left: 23%;
+    position: fixed;
     text-align: center;
-    vertical-align: center;
-    /* justify-content: center; */
-  }
+    vertical-align: middle; 
+    justify-content: center;
+  } */
   
   .rightalign {
     font-size: 1em;
     text-align: right;
   }
 
-  .project{
-    position: static;
-    width: 375px;
-    height: 127px;
-    left: 0px;
-    top: 108px;
-    outline: 3px;
+.card {
+    display: none; 
+    top: 40%;
+    left: 23%;
+    position: fixed !important;
     text-align: center;
-    vertical-align: center;
-    background-color:#e0e0e0;
-    margin: 10px;
-    
-    
-  }
+    vertical-align: middle; 
+}
 
-.capsule{
-    position: static;
-    width: 319px;
-    height: 64px;
-    left: 28px;
-    top: 138px;
-    background-color: #e0e0e0;
-    margin: 10px;
-    border-radius: 30px;
-    
+.alert-button-wrap {
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+#noButton {
+    float: left;
+} 
+
+#yesButton {
+    float: right;
 }
 
 

@@ -10,8 +10,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    transform: translateX(-2%) translateY(-5%);
-    
+    /* transform: translateX(-2%) translateY(-5%); */
 }
 
 #addButton{
@@ -22,16 +21,20 @@
   cursor: pointer;
 }
 
-#textBox{
+#delete{
   cursor: pointer;
 }
 
+#drag{
+  cursor: pointer;
+}
+/* 
 ul li a:hover,ul li a:focus{
     position:relative;
-    z-index:5;
+    z-index:2;
     transition: transform .15s linear;
     transform: scale(1.1);
-}
+} */
 
 #back{
     max-width: 40px;
@@ -48,16 +51,14 @@ ul li a:hover,ul li a:focus{
 .headerWrap a{
     flex:2;
     text-align: center;
-    text-decoration: underline;
 }
 
 .toolWrap {
     width: 100vw;
     height: 48px;
     background-color: #eeeeee;
-    transform: translate(-2%, -5%);
+    /* transform: translate(-2%, -5%); */
 }
-
 
 #more {
     float: right;
@@ -97,6 +98,7 @@ ul li a:hover,ul li a:focus{
   flex-wrap: wrap;
   justify-content: center;
   padding-inline-start: 0;
+  z-index: 2;
 }
 
 .container li{
@@ -115,6 +117,7 @@ ul li a:hover,ul li a:focus{
 
 ul li{
   margin: 5%;
+  z-index: 1;
 }
 
 h1 {
@@ -129,7 +132,13 @@ p {
 
 .note{
   border: 1px;
+  z-index: 1;
 }
+
+/* #noteList {
+  position: absolute;
+  background-color: aqua;
+} */
 
 .redletters{
   color: red;
@@ -137,4 +146,21 @@ p {
   position:fixed;
   top: 40%;
   left: 40%;
+}
+
+h2 {
+  margin-block-start: 0.83em;
+  font-size: 1rem;
+}
+
+.deleteButton{
+  float: right;
+}
+
+.dragButton{
+  float: right;
+}
+
+.alert alert-info{
+  position: fixed!important;
 }

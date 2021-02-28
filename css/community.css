@@ -1,0 +1,36 @@
+
+.capsule{
+    position: static;
+    width: 319px;
+    height: 64px;
+    left: 28px;
+    top: 138px;
+    background-color: #e0e0e0;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.headerWrap {
+    width: 100vw;
+    height: 64px;
+    padding:0;
+    margin-top: 0;
+    background-color: #e0e0e0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transform: translateX(-2%) translateY(-5%);
+}
+
+.post{
+    position: static;
+    width: 375px;
+    height: 127px;
+    left: 0px;
+    top: 108px;
+    outline: 3px;
+    text-align: center;
+    vertical-align: center;
+    background-color:#e0e0e0;
+    margin: 10px;
+  }

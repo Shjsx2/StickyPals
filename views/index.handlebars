@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <html>
+
     <head>
         <link rel="stylesheet" href="../css/styles.css">
-        <script src="../js/alerts.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="../js/alerts.js"></script>
       </head>
+
     <body>
         <div id="topSticker">
             <div class='welcomeWrap'>
@@ -22,15 +26,26 @@
         </div>
         
         {{!-- alert --}}
-        <div class = "alertBox" id = "alert1"> 
+        {{!-- <div class = "alertBox" id = "alert1"> 
             <p>Would you like to create a wall?</p>
-            <button onclick="location.href='/createWalls';">
-            Yes
-            </button>
             <button onclick = "hideAlert('#alert1')">
             No
             </button>
+            <button onclick="location.href='/createWalls';">
+            Yes
+            </button>
+        </div> --}}
+
+        <div class="card" id = "alert1" style="width: 18rem;">
+            <div class="card-body">
+                <p class="card-text">Would you like to create a wall?</p>
+                <div class="alert-button-wrap">
+                    <button class="btn btn-outline-info" id = "noButton"onclick = "hideAlert('#alert1')">No</button>
+                    <button class="btn btn-info" id = "yesButton" onclick="window.localStorage.setItem('currentWall', null);hideAlert('#alert1');location.href='/createWalls';">Yes</button>
+                </div>
+            </div>
         </div>
+
         {{!-- main buttons --}}
         <div class ="groupWrap">
             <div  class="singleWrap" onclick="showAlert('#alert1')">

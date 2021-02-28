@@ -19,8 +19,12 @@ app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 
 app.get('/', function(req, res) {
-    res.render('index');
+    res.render('login');
 });
+
+app.get('/index', function(req, res){
+  res.render('index')
+})
 
 app.get('/createWalls', function(req,res){
     res.render('createWalls');
@@ -35,18 +39,23 @@ app.get('/settings', function(req,res){
 })
 
 app.get('/exploreCommunity', function(req,res){
-  res.render('exploreCommunity');
+  res.render('exploreCommunity', require('./communityData.json'));
 })
 
 app.get('/viewGallery', function(req,res){
-  res.render('viewGallery');
+  res.render('viewGallery', require('./galleryData.json'));
 })
+
 
 
 app.get('/samplePage', function(req,res){
   res.render('samplePage');
-})
+  })
 
+
+app.get('/signup', function(req,res){
+  res.render('signup');
+})
 
 // Example route
 // app.get('/users', user.list);

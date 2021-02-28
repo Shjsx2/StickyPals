@@ -18,6 +18,13 @@
 //     });
 //   });
 
+$(document).ready(function() {
+    $("#alert1").hide()
+    $("#alert").hide()
+    $("#publishAlert").hide()
+    $("#saveAlert").hide()
+})
+
 function hideAlert(tag){
     $(tag).fadeOut();
 }
@@ -45,6 +52,7 @@ function showAlert2(tag){
 //     const imgConverted = document.querySelector("#myCanvas")
 //     imgConverted.src = myURI;
 
+
 //     if(window.navigator.msSaveBlob(myCanvas.msToBlob(), name));
 
 // }
@@ -63,6 +71,22 @@ function showAlert2(tag){
 // })
 
 //convert body to canvas first
+
+
+
+//commented this out when resolving merge conflicts
+//     if(window.navigator.msSaveBlob(myCanvas.msToBlob(), name));
+// }
+
+
+
+function checkReload() {
+    if ($('#alert1').check == false) {
+        $('#alert1').display = "block";
+    }else{
+        $('#alert1').display = "none";
+    }
+}
 
 
 
