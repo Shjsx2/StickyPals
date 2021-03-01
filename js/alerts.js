@@ -42,6 +42,15 @@ function showAlert2(tag){
     window.setTimeout(stopPopup, 1600);
 }
 
+//display
+function fade(tag){
+    $(tag).fadeIn();
+  }
+  $(document).ready(function() {
+    $("#headerframe").fade();
+  })
+  
+
 
 // function saveFile(name){
 //     //tutorial: https://www.youtube.com/watch?v=YoVJWZrS2WU

@@ -1,11 +1,11 @@
 #topSticker {
-    height: 30vh;
+    /* height: 30vh;
     margin-top: 5vw;
     margin-left: 5vw;
     margin-right: 5vw;
     background-color:#e0e0e0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; */
 }
 
 .buttonWrap a {
@@ -59,8 +59,8 @@
 
 .singleWrap {
     cursor:pointer;
-    width: 307px;
-    height: 90px;
+    /* width: 307px;
+    height: 90px; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -115,5 +115,43 @@
     float: right;
 }
 
+
+.wallBackgroundIndex{
+    background-image: url("../assets/wallTextures/ricepaperYellow.png");
+    background-repeat: repeat;
+  }
+
+  .headerIndex{
+    position:relative;
+    top: 10%;
+    right: 50%;
+  }
+
+  .imagesize{
+    width: 90%;
+    margin: 20px;
+    animation: fadein 2s;
+  }
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+  .centered{
+    position: relative;
+    /* top: 50%; */
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+  }
+
+  .centeredText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
 
   

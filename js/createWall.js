@@ -69,9 +69,13 @@ function addNote(e, title='new note', text='type something....') {
   console.log("loading "+title)
   var colors = ["#c4c4c4", "#f2f2f2", "#000000"]
   var c = colors[Math.floor(Math.random()*colors.length)]
-  $("body ul").append('<li class="note"><img class="deleteButton" src="../icons/L/delete.png" contenteditable="false"><a href="#" contenteditable="true"><h2>'+title+'</h2><p>'+text+'</p></a></li>');
+  $("body ul").append('<li class="note"><img class = "colorbutton" src="../icons/colorpallette.png" onclick = "showColors()"><img class="deleteButton" src="../icons/L/delete.png" contenteditable="false"><a href="#" contenteditable="true"><h2>'+title+'</h2><p>'+text+'</p></a></li>');
   $(".deleteButton").click(deleteNotes)
   // $(".dragButton").click(dragNotes)
+}
+
+function showColors(){
+  
 }
 
 function onMoreClick() {

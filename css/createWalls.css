@@ -187,7 +187,6 @@ h2 {
 .texture0{
   border-radius: 40px;
   background-image: url("../assets/wallTextures/witewall_3.png");
-  /* padding: 5px; */
   width: 30px;
   height: 30px;
   border: 2px solid black;
@@ -198,7 +197,6 @@ h2 {
 .texture1{
   border-radius: 40px;
   background-image: url("../assets/wallTextures/cork-board.png");
-  /* padding: 5px; */
   width: 30px;
   height: 30px;
   border: 2px solid black;
@@ -209,7 +207,6 @@ h2 {
 .texture2{
   border-radius: 40px;
   background-image: url("../assets/wallTextures/grunge_wall.png");
-  /* padding: 5px; */
   width: 30px;
   height: 30px;
   border: 2px solid black;
@@ -220,7 +217,6 @@ h2 {
 .texture3{
   border-radius: 40px;
   background-image: url("../assets/wallTextures/mochaGrunge.png");
-  /* padding: 5px; */
   width: 30px;
   height: 30px;
   border: 2px solid black;
@@ -231,7 +227,6 @@ h2 {
 .texture4{
   border-radius: 40px;
   background-image: url("../assets/wallTextures/lined_paper.png");
-  /* padding: 5px; */
   width: 30px;
   height: 30px;
   border: 2px solid black;
@@ -240,3 +235,11 @@ h2 {
   top: 72px;
 }
 
+
+
+.colorbutton{
+  float: right;
+  width: 30px;
+  height: 25px;
+  padding: 3px;
+}

@@ -10,19 +10,20 @@
         <script src="../js/alerts.js"></script>
       </head>
 
-    <body>
-        <div id="topSticker">
-            <div class='welcomeWrap'>
-                <h1>Welcome,<br/>Zack!</h1>
+    <body class = "wallBackgroundIndex">
+        <div id="topSticker" >
+            <div class = "centered">
+                <img src='assets/headerFrame.png' class="imagesize" id = "headerframe">
+               {{!-- <div class = "centeredText"> Welcome to Sticky Pals!</div> --}}
             </div>
-            <div onclick="location.href='/tutorial';"  class='buttonWrap'>
+            {{!-- <div onclick="location.href='/tutorial';"  class='buttonWrap'>
                 <img src='icons/L/next.png'>
                 <a>start a tutorial</a> 
             </div>
             <div onclick="location.href='/settings';" class='buttonWrap'>
                 <img src='icons/L/next.png'>
                 <a>settings</a>
-            </div>
+            </div> --}}
         </div>
         
         {{!-- alert --}}
@@ -51,6 +52,8 @@
             <div  class="singleWrap" onclick="showAlert('#alert1')">
                 <img src='icons/redirect.png'>
                 <a class="textWrap"  >Create Walls</a>
+
+
             </div>
             <div onclick="location.href='/viewGallery'" class="singleWrap">
                 <img src='icons/redirect.png'>
