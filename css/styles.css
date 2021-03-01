@@ -119,7 +119,12 @@
 .wallBackgroundIndex{
     background-image: url("../assets/wallTextures/ricepaperYellow.png");
     background-repeat: repeat;
-  }
+}
+
+.wallBackgroundGallery{
+    background-image: url("../assets/wallTextures/vintage-wallpaper2.png");
+    background-repeat: repeat;
+}
 
   .headerIndex{
     position:relative;

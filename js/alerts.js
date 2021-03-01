@@ -46,6 +46,7 @@ function showAlert2(tag){
 function fade(tag){
     $(tag).fadeIn();
   }
+  
   $(document).ready(function() {
     $("#headerframe").fade();
   })

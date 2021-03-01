@@ -131,8 +131,18 @@ p {
 }
 
 .note{
-  border: 1px;
-  z-index: 1;
+  background: url("../assets/stickynotes/sticky_lightblue.png");
+
+  /* border: 1px; */
+  /* z-index: 1; */
+  /* background-image: url("../assets/stickynotes/sticky_lightblue.png"); */
+  background-repeat: repeat;
+  /* background-attachment: fixed; */
+  /* display: list-item;  */
+  float:left;
+  display: block;
+  /* padding-left: 1px; */
+  /* list-style-image: url("../assets/stickynotes/sticky_lightblue.png"); */
 }
 
 /* #noteList {

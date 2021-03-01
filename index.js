@@ -19,6 +19,7 @@ app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/wallTextures', express.static(path.join(__dirname, 'wallTextures')));
+app.use('/stickynotes', express.static(path.join(__dirname, 'stickynotes')));
 
 
 app.get('/', function(req, res) {
