@@ -141,4 +141,41 @@ function dragNotes(e) {
     alert("Your wall has been published!");
   }
 
+function changeBg0(){
+  document.getElementById("wallBod").classList.remove('wallBackground1');
+  document.getElementById("wallBod").classList.remove('wallBackground2');
+  document.getElementById("wallBod").classList.remove('wallBackground3');
+  document.getElementById("wallBod").classList.remove('wallBackground4');
+  document.getElementById("wallBod").classList.add('wallBackground0');
+}
+function changeBg1(){
+  document.getElementById("wallBod").classList.remove('wallBackground0');
+  document.getElementById("wallBod").classList.remove('wallBackground2');
+  document.getElementById("wallBod").classList.remove('wallBackground3');
+  document.getElementById("wallBod").classList.remove('wallBackground4');
+  document.getElementById("wallBod").classList.add('wallBackground1');
+}
+function changeBg2(){
+  document.getElementById("wallBod").classList.remove('wallBackground1');
+  document.getElementById("wallBod").classList.remove('wallBackground0');
+  document.getElementById("wallBod").classList.remove('wallBackground3');
+  document.getElementById("wallBod").classList.remove('wallBackground4');
+  document.getElementById("wallBod").classList.add('wallBackground2');
+}
+function changeBg3(){
+  document.getElementById("wallBod").classList.remove('wallBackground1');
+  document.getElementById("wallBod").classList.remove('wallBackground2');
+  document.getElementById("wallBod").classList.remove('wallBackground0');
+  document.getElementById("wallBod").classList.remove('wallBackground4');
+  document.getElementById("wallBod").classList.add('wallBackground3');
+}
+function changeBg4(){
+  document.getElementById("wallBod").classList.remove('wallBackground1');
+  document.getElementById("wallBod").classList.remove('wallBackground2');
+  document.getElementById("wallBod").classList.remove('wallBackground3');
+  document.getElementById("wallBod").classList.remove('wallBackground0');
+  document.getElementById("wallBod").classList.add('wallBackground4');
+}
+
+
 

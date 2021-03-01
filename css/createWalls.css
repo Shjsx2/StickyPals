@@ -140,14 +140,6 @@ p {
   background-color: aqua;
 } */
 
-.redletters{
-  color: red;
-  display: none;
-  position:fixed;
-  top: 40%;
-  left: 40%;
-}
-
 h2 {
   margin-block-start: 0.83em;
   font-size: 1rem;
@@ -164,3 +156,87 @@ h2 {
 .alert alert-info{
   position: fixed!important;
 }
+
+/* CSS.paintWorklet.addModule("") */
+
+.wallBackground0{
+  background-image: url("../assets/wallTextures/witewall_3.png");
+  background-repeat: repeat;
+}
+
+.wallBackground1{
+  background-image: url("../assets/wallTextures/cork-board.png");
+  background-repeat: repeat;
+}
+
+.wallBackground2{
+  background-image: url("../assets/wallTextures/grunge_wall.png");
+  background-repeat: repeat;
+}
+
+.wallBackground3{
+  background-image: url("../assets/wallTextures/mochaGrunge.png");
+  background-repeat: repeat;
+}
+
+.wallBackground4{
+  background-image: url("../assets/wallTextures/lined_paper.png");
+  background-repeat: repeat;
+}
+
+.texture0{
+  border-radius: 40px;
+  background-image: url("../assets/wallTextures/witewall_3.png");
+  /* padding: 5px; */
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  position: absolute;
+  left: 110px;
+  top: 72px;
+}
+.texture1{
+  border-radius: 40px;
+  background-image: url("../assets/wallTextures/cork-board.png");
+  /* padding: 5px; */
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  position: absolute;
+  left: 150px;
+  top: 72px;
+}
+.texture2{
+  border-radius: 40px;
+  background-image: url("../assets/wallTextures/grunge_wall.png");
+  /* padding: 5px; */
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  position: absolute;
+  left: 190px;
+  top: 72px;
+}
+.texture3{
+  border-radius: 40px;
+  background-image: url("../assets/wallTextures/mochaGrunge.png");
+  /* padding: 5px; */
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  position: absolute;
+  left: 230px;
+  top: 72px;
+}
+.texture4{
+  border-radius: 40px;
+  background-image: url("../assets/wallTextures/lined_paper.png");
+  /* padding: 5px; */
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  position: absolute;
+  left: 270px;
+  top: 72px;
+}
+

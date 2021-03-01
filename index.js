@@ -17,6 +17,9 @@ app.set('view engine', 'handlebars');
 app.use('/icons', express.static(path.join(__dirname, 'icons')));
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/wallTextures', express.static(path.join(__dirname, 'wallTextures')));
+
 
 app.get('/', function(req, res) {
     res.render('login');
