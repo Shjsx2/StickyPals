@@ -1,11 +1,11 @@
 #topSticker {
-    height: 30vh;
+    /* height: 30vh;
     margin-top: 5vw;
     margin-left: 5vw;
     margin-right: 5vw;
     background-color:#e0e0e0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; */
 }
 
 .buttonWrap a {
@@ -59,8 +59,8 @@
 
 .singleWrap {
     cursor:pointer;
-    width: 307px;
-    height: 90px;
+    /* width: 307px;
+    height: 90px; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -115,5 +115,3 @@
     float: right;
 }
 
-
-  

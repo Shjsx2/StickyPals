@@ -42,16 +42,53 @@ function showAlert2(tag){
     window.setTimeout(stopPopup, 1600);
 }
 
+//display
+function fade(tag){
+    $(tag).fadeIn();
+  }
+  
+$(document).ready(function() {
+    $("#headerframe").fade();
+})
 
-function saveFile(name){
-    // https://www.youtube.com/watch?v=YoVJWZrS2WU
-    name = "file1";
-    const myCanvas = document.getElementById('wallBod');
-    const myURI = myCanvas.toDataURL("image/jpeg");
-    imgConverted.src = myURI;
 
-    if(window.navigator.msSaveBlob(myCanvas.msToBlob(), name));
-}
+
+// function saveFile(name){
+//     //tutorial: https://www.youtube.com/watch?v=YoVJWZrS2WU
+//     name = "file1";
+//     //const myCanvas = document.getElementById('wallBod');
+//     const myCanvas = document.querySelector("#wallBod")
+//     const myURI = myCanvas.toDataURL("image/jpeg");
+//     const imgConverted = document.querySelector("#myCanvas")
+//     imgConverted.src = myURI;
+
+
+//     if(window.navigator.msSaveBlob(myCanvas.msToBlob(), name));
+
+// }
+
+// // var btn = document.querySelector("#saveBtn");
+// const myCanvas = document.querySelector("#wallBod");
+// //const myURI = myCanvas.toDataURL("image/jpeg");
+// const imgConverted = document.querySelector("#myCanvas");
+// var btn = document.getElementById('saveBtn');
+
+// btn.addEventListener("click",function saving(){
+//     // if(window.navigator.msSaveBlob){
+//     //     window.navigator.msSaveBlob(myCanvas.msToBlob(), "foo2");
+//     // }
+
+// })
+
+//convert body to canvas first
+
+
+
+//commented this out when resolving merge conflicts
+//     if(window.navigator.msSaveBlob(myCanvas.msToBlob(), name));
+// }
+
+
 
 function checkReload() {
     if ($('#alert1').check == false) {

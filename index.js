@@ -17,6 +17,10 @@ app.set('view engine', 'handlebars');
 app.use('/icons', express.static(path.join(__dirname, 'icons')));
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/wallTextures', express.static(path.join(__dirname, 'wallTextures')));
+app.use('/stickynotes', express.static(path.join(__dirname, 'stickynotes')));
+
 
 app.get('/', function(req, res) {
     res.render('login');
@@ -46,8 +50,19 @@ app.get('/viewGallery', function(req,res){
   res.render('viewGallery', require('./galleryData.json'));
 })
 
+app.get('/samplePage', function(req,res){
+  res.render('samplePage');
+  })
 app.get('/signup', function(req,res){
   res.render('signup');
+})
+
+app.get('/communityProject1', function(req,res){
+  res.render('communityProject1');
+})
+
+app.get('/communityProject2', function(req,res){
+  res.render('communityProject2');
 })
 
 // Example route
@@ -56,3 +71,7 @@ app.get('/signup', function(req,res){
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+
+
+

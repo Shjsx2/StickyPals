@@ -69,13 +69,21 @@ function addNote(e, title='new note', text='type something....') {
   console.log("loading "+title)
   var colors = ["#c4c4c4", "#f2f2f2", "#000000"]
   var c = colors[Math.floor(Math.random()*colors.length)]
-  $("body ul").append('<li class="note"><img class="deleteButton" src="../icons/L/delete.png" contenteditable="false"><a href="#" contenteditable="true"><h2>'+title+'</h2><p>'+text+'</p></a></li>');
+  
+  // $("body ul").append('<li class="note"><img class = "colorbutton" src="../icons/colorpallette.png" onclick = "showColors()"><img class="deleteButton" src="../icons/L/delete.png" contenteditable="false"><a contenteditable="true"><h3 class = "headerContainer">'+title+'</h3><p class = "textContainer">'+text+'</p></a></li>');
+
+  $("body ul").append(' <li class = "note"><img class = "colorbutton" src="../icons/colorpallette.png" onclick = "colorClick()"><img class="deleteButton" src="../icons/L/delete.png" contenteditable="false"><a contenteditable="true" class = "blueNote" id = "changeableNote"><p class = "headerContainer">'+title+'</p><p class = "textContainer" >'+text+'</p></a><div id = "colorDropdown" ><a id = "blueColor" onclick = "changeToBlue()">blue</a><a id = "purpleColor" onclick="changeToPurple()">purple</a><a id = "pinkColor" onclick="changeToPink()">pink</a><a id = "redColor" onclick="changeToRed()">red</a><a id = "orangeColor" onclick="changeToOrange()">orange</a><a id = "yellowColor" onclick="changeToYellow()">yellow</a><a id = "greenColor" onclick="changeToGreen()">green</a></div></li> ')
+
   $(".deleteButton").click(deleteNotes)
   // $(".dragButton").click(dragNotes)
 }
 
+
 function onMoreClick() {
   $("#moreDropdown").toggle('show')
+}
+function colorClick() {
+  $("#colorDropdown").toggle('show')
 }
 
 function goPrevious(){
@@ -141,4 +149,118 @@ function dragNotes(e) {
     alert("Your wall has been published!");
   }
 
+function changeBg0(){
+  document.getElementById("wallBod").classList.remove('wallBackground1');
+  document.getElementById("wallBod").classList.remove('wallBackground2');
+  document.getElementById("wallBod").classList.remove('wallBackground3');
+  document.getElementById("wallBod").classList.remove('wallBackground4');
+  document.getElementById("wallBod").classList.add('wallBackground0');
+}
+function changeBg1(){
+  document.getElementById("wallBod").classList.remove('wallBackground0');
+  document.getElementById("wallBod").classList.remove('wallBackground2');
+  document.getElementById("wallBod").classList.remove('wallBackground3');
+  document.getElementById("wallBod").classList.remove('wallBackground4');
+  document.getElementById("wallBod").classList.add('wallBackground1');
+}
+function changeBg2(){
+  document.getElementById("wallBod").classList.remove('wallBackground1');
+  document.getElementById("wallBod").classList.remove('wallBackground0');
+  document.getElementById("wallBod").classList.remove('wallBackground3');
+  document.getElementById("wallBod").classList.remove('wallBackground4');
+  document.getElementById("wallBod").classList.add('wallBackground2');
+}
+function changeBg3(){
+  document.getElementById("wallBod").classList.remove('wallBackground1');
+  document.getElementById("wallBod").classList.remove('wallBackground2');
+  document.getElementById("wallBod").classList.remove('wallBackground0');
+  document.getElementById("wallBod").classList.remove('wallBackground4');
+  document.getElementById("wallBod").classList.add('wallBackground3');
+}
+function changeBg4(){
+  document.getElementById("wallBod").classList.remove('wallBackground1');
+  document.getElementById("wallBod").classList.remove('wallBackground2');
+  document.getElementById("wallBod").classList.remove('wallBackground3');
+  document.getElementById("wallBod").classList.remove('wallBackground0');
+  document.getElementById("wallBod").classList.add('wallBackground4');
+}
 
+
+function changeToBlue(){
+  var el = 
+  el.getElementById("changeableNote").classList.remove('greenNote');
+  el.getElementById("changeableNote").classList.remove('purpleNote');
+  el.getElementById("changeableNote").classList.remove('pinkNote');
+  el.getElementById("changeableNote").classList.remove('redNote');
+  el.getElementById("changeableNote").classList.remove('orangeNote');
+  el.getElementById("changeableNote").classList.remove('yellowNote');
+  el.getElementById("changeableNote").classList.add('blueNote');
+  
+  //go to nearest element with id"changableNote"
+  // find the element of the parent id
+ 
+  // el.closest("#changeableNote").classList.remove('blueNote');
+  // el.closest("#changeableNote").classList.add('redNote');
+
+  colorClick();
+}
+function changeToPurple(){
+  document.getElementById("changeableNote").classList.remove('greenNote');
+  document.getElementById("changeableNote").classList.remove('blueNote');
+  document.getElementById("changeableNote").classList.remove('pinkNote');
+  document.getElementById("changeableNote").classList.remove('redNote');
+  document.getElementById("changeableNote").classList.remove('orangeNote');
+  document.getElementById("changeableNote").classList.remove('yellowNote');
+  document.getElementById("changeableNote").classList.add('purpleNote');
+  colorClick();
+}
+function changeToPink(){
+  document.getElementById("changeableNote").classList.remove('greenNote');
+  document.getElementById("changeableNote").classList.remove('blueNote');
+  document.getElementById("changeableNote").classList.remove('purpleNote');
+  document.getElementById("changeableNote").classList.remove('redNote');
+  document.getElementById("changeableNote").classList.remove('orangeNote');
+  document.getElementById("changeableNote").classList.remove('yellowNote');
+  document.getElementById("changeableNote").classList.add('pinkNote');
+  colorClick();
+}
+function changeToRed(){
+  document.getElementById("changeableNote").classList.remove('greenNote');
+  document.getElementById("changeableNote").classList.remove('blueNote');
+  document.getElementById("changeableNote").classList.remove('pinkNote');
+  document.getElementById("changeableNote").classList.remove('purpleNote');
+  document.getElementById("changeableNote").classList.remove('orangeNote');
+  document.getElementById("changeableNote").classList.remove('yellowNote');
+  document.getElementById("changeableNote").classList.add('redNote');
+  colorClick();
+}
+function changeToOrange(){
+  document.getElementById("changeableNote").classList.remove('greenNote');
+  document.getElementById("changeableNote").classList.remove('blueNote');
+  document.getElementById("changeableNote").classList.remove('pinkNote');
+  document.getElementById("changeableNote").classList.remove('redNote');
+  document.getElementById("changeableNote").classList.remove('purpleNote');
+  document.getElementById("changeableNote").classList.remove('yellowNote');
+  document.getElementById("changeableNote").classList.add('orangeNote');
+  colorClick();
+}
+function changeToYellow(){
+  document.getElementById("changeableNote").classList.remove('greenNote');
+  document.getElementById("changeableNote").classList.remove('blueNote');
+  document.getElementById("changeableNote").classList.remove('pinkNote');
+  document.getElementById("changeableNote").classList.remove('redNote');
+  document.getElementById("changeableNote").classList.remove('orangeNote');
+  document.getElementById("changeableNote").classList.remove('purpleNote');
+  document.getElementById("changeableNote").classList.add('yellowNote');
+  colorClick();
+}
+function changeToGreen(){
+  document.getElementById("changeableNote").classList.remove('purpleNote');
+  document.getElementById("changeableNote").classList.remove('blueNote');
+  document.getElementById("changeableNote").classList.remove('pinkNote');
+  document.getElementById("changeableNote").classList.remove('redNote');
+  document.getElementById("changeableNote").classList.remove('orangeNote');
+  document.getElementById("changeableNote").classList.remove('yellowNote');
+  document.getElementById("changeableNote").classList.add('greenNote');
+  colorClick();
+}

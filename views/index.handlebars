@@ -2,67 +2,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <html>
 
-    <head>
+    <head >
         <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/design2.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="../js/alerts.js"></script>
       </head>
 
-    <body>
-        <div id="topSticker">
-            <div class='welcomeWrap'>
-                <h1>Welcome,<br/>Zack!</h1>
-            </div>
-            <div onclick="location.href='/tutorial';"  class='buttonWrap'>
-                <img src='icons/L/next.png'>
-                <a>start a tutorial</a> 
-            </div>
-            <div onclick="location.href='/settings';" class='buttonWrap'>
-                <img src='icons/L/next.png'>
-                <a>settings</a>
-            </div>
-        </div>
-        
-        {{!-- alert --}}
-        {{!-- <div class = "alertBox" id = "alert1"> 
-            <p>Would you like to create a wall?</p>
-            <button onclick = "hideAlert('#alert1')">
-            No
-            </button>
-            <button onclick="location.href='/createWalls';">
-            Yes
-            </button>
-        </div> --}}
+    <body >
 
-        <div class="card" id = "alert1" style="width: 18rem;">
-            <div class="card-body">
-                <p class="card-text">Would you like to create a wall?</p>
-                <div class="alert-button-wrap">
-                    <button class="btn btn-outline-info" id = "noButton"onclick = "hideAlert('#alert1')">No</button>
-                    <button class="btn btn-info" id = "yesButton" onclick="window.localStorage.setItem('currentWall', null);hideAlert('#alert1');location.href='/createWalls';">Yes</button>
+        {{!-- class = "wallBackgroundIndex" --}}
+        <div class = "mygrid">
+            <div class="jumbotronDesign2">
+                {{!-- <img src = '../assets/paperRip.png' style="background-repeat: repeat-x;    
+                                                            width: 800px;
+                                                            position:absolute;
+                                                            z-index: 1;
+                                                            bottom: -70px;"> --}}
+                {{!-- <a class="ripindex"></a> --}}
+                <img class = "ripindex" src='../assets/paperRip.png'>
+            </div>
+            
+            <div class="wallBackgroundIndex">
+                <div></div>
+            
+
+                <div class="card" id = "alert1" style="width: 18rem;">
+                    <div class="card-body">
+                        <p class="card-text">Would you like to create a wall?</p>
+                        <div class="alert-button-wrap">
+                            <button class="btn btn-outline-info" id = "noButton"onclick = "hideAlert('#alert1')">No</button>
+                            <button class="btn btn-info" id = "yesButton" onclick="window.localStorage.setItem('currentWall', null);hideAlert('#alert1');location.href='/createWalls';">Yes</button>
+                        </div>
+                    </div>
                 </div>
+
+                {{!-- main buttons --}}
+                <div class ="groupWrap">
+                    <div  class="singleWrap" onclick="showAlert('#alert1')">
+                        <img src='icons/redirect.png'>
+                        <a class="textWrap"  >Create Walls</a>
+
+                    </div>
+                    <div onclick="location.href='/viewGallery'" class="singleWrap">
+                        <img src='icons/redirect.png'>
+                        <a class="textWrap">View Gallery</a>
+                    </div>
+                    <div onclick="location.href='/exploreCommunity';" class="singleWrap">
+                        <img src='icons/redirect.png'>
+                        <a class="textWrap">Explore Community</a>
+                    </div>
+                </div>
+
+
+
+
             </div>
         </div>
-
-        {{!-- main buttons --}}
-        <div class ="groupWrap">
-            <div  class="singleWrap" onclick="showAlert('#alert1')">
-                <img src='icons/redirect.png'>
-                <a class="textWrap"  >Create Walls</a>
-            </div>
-            <div onclick="location.href='/viewGallery'" class="singleWrap">
-                <img src='icons/redirect.png'>
-                <a class="textWrap">View Gallery</a>
-            </div>
-            <div onclick="location.href='/exploreCommunity';" class="singleWrap">
-                <img src='icons/redirect.png'>
-                <a class="textWrap">Explore Community</a>
-            </div>
-        </div>
-
-
-
     </body>
 </html>
