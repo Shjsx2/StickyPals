@@ -50,13 +50,32 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
           </div>
             {{! --sampleNotes --}}
             <li class = "note">
-              <a href="#" contenteditable="true">
-                <h1>Brainstorm idea</h1>
-                <p>goal tracking apps</p>
+              <img class = "colorbutton" src="../icons/colorpallette.png" onclick = "colorClick()">
+              <img class="deleteButton" src="../icons/L/delete.png" contenteditable="false">
+              <a contenteditable="true" class = "blueNote" id = "changeableNote">
+                <p class = "headerContainer">Brainstorm idea</p>
+                <p class = "textContainer" >goal tracking apps</p>
               </a>
+              {{!-- change color --}}
+              <div id = "colorDropdown" >
+                <a id = "blueColor" onclick = "changeToBlue()">blue</a>
+                <a id = "purpleColor" onclick="changeToPurple()">purple</a>
+                <a id = "pinkColor" onclick="changeToPink()">pink</a>
+                <a id = "redColor" onclick="changeToRed()">red</a>
+                <a id = "orangeColor" onclick="changeToOrange()">orange</a>
+                <a id = "yellowColor" onclick="changeToYellow()">yellow</a>
+                <a id = "greenColor" onclick="changeToGreen()">green</a>
+   
+              </div>
             </li>
-
         </ul>
+
+
+
+
+
+
+
 
           {{!-- alerts --}}
           {{!-- <div id = "alert" class = "alertBox">

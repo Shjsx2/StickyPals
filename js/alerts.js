@@ -47,10 +47,10 @@ function fade(tag){
     $(tag).fadeIn();
   }
   
-  $(document).ready(function() {
+$(document).ready(function() {
     $("#headerframe").fade();
-  })
-  
+})
+
 
 
 // function saveFile(name){
