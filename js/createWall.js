@@ -149,118 +149,78 @@ function dragNotes(e) {
     alert("Your wall has been published!");
   }
 
+function changeBg(background){
+  var bg_list = ['wallBackground0', 'wallBackground1', 'wallBackground2', 'wallBackground3', 'wallBackground4'];
+  bg_list.forEach(element => {
+    if (element == background){
+      document.getElementById("wallBod").classList.add(background);
+    }
+    else{
+      document.getElementById("wallBod").classList.remove(element);
+    }
+  })
+}
+
 function changeBg0(){
-  document.getElementById("wallBod").classList.remove('wallBackground1');
-  document.getElementById("wallBod").classList.remove('wallBackground2');
-  document.getElementById("wallBod").classList.remove('wallBackground3');
-  document.getElementById("wallBod").classList.remove('wallBackground4');
-  document.getElementById("wallBod").classList.add('wallBackground0');
+  changeBg('wallBackground0');
 }
 function changeBg1(){
-  document.getElementById("wallBod").classList.remove('wallBackground0');
-  document.getElementById("wallBod").classList.remove('wallBackground2');
-  document.getElementById("wallBod").classList.remove('wallBackground3');
-  document.getElementById("wallBod").classList.remove('wallBackground4');
-  document.getElementById("wallBod").classList.add('wallBackground1');
+  changeBg('wallBackground1');
 }
 function changeBg2(){
-  document.getElementById("wallBod").classList.remove('wallBackground1');
-  document.getElementById("wallBod").classList.remove('wallBackground0');
-  document.getElementById("wallBod").classList.remove('wallBackground3');
-  document.getElementById("wallBod").classList.remove('wallBackground4');
-  document.getElementById("wallBod").classList.add('wallBackground2');
+  changeBg('wallBackground2');
 }
 function changeBg3(){
-  document.getElementById("wallBod").classList.remove('wallBackground1');
-  document.getElementById("wallBod").classList.remove('wallBackground2');
-  document.getElementById("wallBod").classList.remove('wallBackground0');
-  document.getElementById("wallBod").classList.remove('wallBackground4');
-  document.getElementById("wallBod").classList.add('wallBackground3');
+  changeBg('wallBackground3');
 }
 function changeBg4(){
-  document.getElementById("wallBod").classList.remove('wallBackground1');
-  document.getElementById("wallBod").classList.remove('wallBackground2');
-  document.getElementById("wallBod").classList.remove('wallBackground3');
-  document.getElementById("wallBod").classList.remove('wallBackground0');
-  document.getElementById("wallBod").classList.add('wallBackground4');
+  changeBg('wallBackground4');
 }
 
+
+function changeColor(c){
+  var color_list = ['greenNote', 'purpleNote', 'pinkNote','redNote', 'orangeNote', 'yellowNote', 'blueNote'];
+  color_list.forEach(element => {
+    if (element == c){
+      document.getElementById("changeableNote").classList.add(c);
+    }
+    else{
+      document.getElementById("changeableNote").classList.remove(element);
+    }
+  })
+}
 
 function changeToBlue(){
-  var el = 
-  el.getElementById("changeableNote").classList.remove('greenNote');
-  el.getElementById("changeableNote").classList.remove('purpleNote');
-  el.getElementById("changeableNote").classList.remove('pinkNote');
-  el.getElementById("changeableNote").classList.remove('redNote');
-  el.getElementById("changeableNote").classList.remove('orangeNote');
-  el.getElementById("changeableNote").classList.remove('yellowNote');
-  el.getElementById("changeableNote").classList.add('blueNote');
-  
-  //go to nearest element with id"changableNote"
-  // find the element of the parent id
- 
-  // el.closest("#changeableNote").classList.remove('blueNote');
-  // el.closest("#changeableNote").classList.add('redNote');
+  changeColor('blueNote'); 
+  colorClick(); 
+}
 
-  colorClick();
-}
 function changeToPurple(){
-  document.getElementById("changeableNote").classList.remove('greenNote');
-  document.getElementById("changeableNote").classList.remove('blueNote');
-  document.getElementById("changeableNote").classList.remove('pinkNote');
-  document.getElementById("changeableNote").classList.remove('redNote');
-  document.getElementById("changeableNote").classList.remove('orangeNote');
-  document.getElementById("changeableNote").classList.remove('yellowNote');
-  document.getElementById("changeableNote").classList.add('purpleNote');
+  changeColor('purpleNote');  
   colorClick();
 }
+
 function changeToPink(){
-  document.getElementById("changeableNote").classList.remove('greenNote');
-  document.getElementById("changeableNote").classList.remove('blueNote');
-  document.getElementById("changeableNote").classList.remove('purpleNote');
-  document.getElementById("changeableNote").classList.remove('redNote');
-  document.getElementById("changeableNote").classList.remove('orangeNote');
-  document.getElementById("changeableNote").classList.remove('yellowNote');
-  document.getElementById("changeableNote").classList.add('pinkNote');
+  changeColor('pinkNote');  
   colorClick();
 }
+
 function changeToRed(){
-  document.getElementById("changeableNote").classList.remove('greenNote');
-  document.getElementById("changeableNote").classList.remove('blueNote');
-  document.getElementById("changeableNote").classList.remove('pinkNote');
-  document.getElementById("changeableNote").classList.remove('purpleNote');
-  document.getElementById("changeableNote").classList.remove('orangeNote');
-  document.getElementById("changeableNote").classList.remove('yellowNote');
-  document.getElementById("changeableNote").classList.add('redNote');
+  changeColor('redNote');  
   colorClick();
 }
+
 function changeToOrange(){
-  document.getElementById("changeableNote").classList.remove('greenNote');
-  document.getElementById("changeableNote").classList.remove('blueNote');
-  document.getElementById("changeableNote").classList.remove('pinkNote');
-  document.getElementById("changeableNote").classList.remove('redNote');
-  document.getElementById("changeableNote").classList.remove('purpleNote');
-  document.getElementById("changeableNote").classList.remove('yellowNote');
-  document.getElementById("changeableNote").classList.add('orangeNote');
-  colorClick();
+  changeColor('orangeNote'); 
+  colorClick(); 
 }
+
 function changeToYellow(){
-  document.getElementById("changeableNote").classList.remove('greenNote');
-  document.getElementById("changeableNote").classList.remove('blueNote');
-  document.getElementById("changeableNote").classList.remove('pinkNote');
-  document.getElementById("changeableNote").classList.remove('redNote');
-  document.getElementById("changeableNote").classList.remove('orangeNote');
-  document.getElementById("changeableNote").classList.remove('purpleNote');
-  document.getElementById("changeableNote").classList.add('yellowNote');
+  changeColor('yellowNote');  
   colorClick();
 }
+
 function changeToGreen(){
-  document.getElementById("changeableNote").classList.remove('purpleNote');
-  document.getElementById("changeableNote").classList.remove('blueNote');
-  document.getElementById("changeableNote").classList.remove('pinkNote');
-  document.getElementById("changeableNote").classList.remove('redNote');
-  document.getElementById("changeableNote").classList.remove('orangeNote');
-  document.getElementById("changeableNote").classList.remove('yellowNote');
-  document.getElementById("changeableNote").classList.add('greenNote');
+  changeColor('greenNote');  
   colorClick();
 }
