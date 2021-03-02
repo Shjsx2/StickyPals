@@ -321,7 +321,7 @@ h2 {
 
 #colorDropdown {
   display: none;
-  position: relative;
+  position: absolute;
   width: 112px;
   margin-top: -100px;
   margin-left: 45%;

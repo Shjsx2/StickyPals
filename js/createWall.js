@@ -187,13 +187,21 @@ function changeBg4(){
 
 
 function changeToBlue(){
-  document.getElementById("changeableNote").classList.remove('greenNote');
-  document.getElementById("changeableNote").classList.remove('purpleNote');
-  document.getElementById("changeableNote").classList.remove('pinkNote');
-  document.getElementById("changeableNote").classList.remove('redNote');
-  document.getElementById("changeableNote").classList.remove('orangeNote');
-  document.getElementById("changeableNote").classList.remove('yellowNote');
-  document.getElementById("changeableNote").classList.add('blueNote');
+  var el = 
+  el.getElementById("changeableNote").classList.remove('greenNote');
+  el.getElementById("changeableNote").classList.remove('purpleNote');
+  el.getElementById("changeableNote").classList.remove('pinkNote');
+  el.getElementById("changeableNote").classList.remove('redNote');
+  el.getElementById("changeableNote").classList.remove('orangeNote');
+  el.getElementById("changeableNote").classList.remove('yellowNote');
+  el.getElementById("changeableNote").classList.add('blueNote');
+  
+  //go to nearest element with id"changableNote"
+  // find the element of the parent id
+ 
+  // el.closest("#changeableNote").classList.remove('blueNote');
+  // el.closest("#changeableNote").classList.add('redNote');
+
   colorClick();
 }
 function changeToPurple(){

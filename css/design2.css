@@ -1,0 +1,70 @@
+
+.jumbotronDesign2{
+    background-image: url("../assets/wallTextures/hip_square.png");
+    background-repeat: repeat;
+    width: 110%;
+    height: 40%;
+    top:0px;
+    position: absolute;
+    z-index: 1;
+    
+}
+
+.wallBackgroundIndex{
+    background-image: url("../assets/wallTextures/ricepaperYellow.png");
+    background-repeat: repeat;
+    /* width: 100%; */
+    position: absolute;
+    z-index: -1;
+
+    width: 110%;
+    height: 60%;
+    bottom:0px;
+}
+
+.wallBackgroundGallery{
+    background-image: url("../assets/wallTextures/vintage-wallpaper2.png");
+    background-repeat: repeat;
+}
+
+  .headerIndex{
+    position:relative;
+    top: 10%;
+    right: 50%;
+  }
+
+  .imagesize{
+    width: 90%;
+    margin: 20px;
+    animation: fadein 2s;
+  }
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+  .centered{
+    position: relative;
+    /* top: 50%; */
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+  }
+
+  .centeredText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+.ripindex{
+    /* background-image: url("../assets/paperRip.png"); */
+    background-repeat: repeat-x;
+    width: 800px;
+    height:150px;
+    position:absolute;
+    z-index: 1;
+    bottom: -70px
+}
