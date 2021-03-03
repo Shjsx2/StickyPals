@@ -14,17 +14,14 @@
 }
 
 .wallBackgroundIndex{
-    background-image: url("../assets/wallTextures/ricepaperYellow.png");
+    background-image: url(../assets/wallTextures/ricepaperYellow.png);
     background-repeat: repeat;
-    /* width: 100%; */
-    /* position: absolute; */
-    position:relative;
+    position: relative;
     z-index: -1;
-
-    width: 110%;
-    height: 60%;
-    /* height 100%? */
-    bottom:0px;
+    /* width: 110%; */
+    height: 500px;
+    bottom: 0px;
+}
 }
 
 .wallBackgroundGallery{
@@ -68,7 +65,7 @@
     /* background-image: url("../assets/paperRip.png"); */
     background-repeat: repeat-x;
     width: 800px;
-    height:150px;
+    height:140px;
     position:absolute;
     z-index: 1;
     /* bottom: -70px */
@@ -101,4 +98,22 @@
   top: -15px;
   width: 270px;
   height: 150px;
+}
+
+.mygrid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+#ecSticky{
+    position: absolute;
+    top: 20%;
+    left: 42%;
+    /* margin: 20px; */
+    width: 200px;
+    height:200px;
+    background-image: '../assets/bStickyExploreCommunity.png';
+}
+.mainButton{
+
 }
