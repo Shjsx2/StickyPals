@@ -14,27 +14,27 @@
     </head>
 
 
-    <body >
+    <body class = "exploreCommunityBackground">
         <div class="headerWrap">
-            {{!-- <p>Explore Community</p> --}}
-            <img id='back' src='../icons/L/back.png'>  
+            <p class = "headerFont">Explore Community</p>
+            <img id='back' src='../icons/L/back.png' style="position:absolute; left:7%">  
         </div>
 
-        <div>
-            <div class = "capsule">
-                {{!-- <p>Search</p> --}}
-                </div>
+        <img src = '../assets/drawingPeopleTalking.png' id="ecDrawing1">
+        <img src = '../assets/drawingLock.png' id="ecDrawing2">
 
         {{#each post}}
 		    <div class= "post">
-			    <a href='#'><h3>{{name}}</h3></a>
-			    <p>{{dates}}</p>
-                <p>{{author}}</p>
-                <p>{{description}}</p>
+                <div style="position:relative; top:20px;">
+                    <a href='#'><h3>{{name}}</h3></a>
+                    <p>{{dates}}</p>
+                    <p>{{author}}</p>
+                    <p>{{description}}</p>
+                </div>
 		    </div>
 	    {{/each}}
-        <h1  onclick="location.href='/communityProject1';">Example1</h1>
-        <h1  onclick="location.href='/communityProject2';">Example2</h1>
+        {{!-- <h1  onclick="location.href='/communityProject1';">Example1</h1> --}}
+        {{!-- <h1  onclick="location.href='/communityProject2';">Example2</h1> --}}
 
 
     </body>

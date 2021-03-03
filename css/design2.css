@@ -1,27 +1,29 @@
+/* 
+main colors:
+yellow: f7f1ba
+blue: 92d9f6
+gray: f4f1eb
+gark gray: 4e4d44
+darker blue: 74aec6
+black: 0b0a08
+*/
 
 .jumbotronDesign2{
-    background-image: url("../assets/wallTextures/hip_square.png");
-    background-repeat: repeat;
-    width: 110%;
-    /* height: 40%; */
-    height:300px;
-    top:0px;
-    /* position: absolute; */
-    /* change to relative? */
-    position:relative;
-    z-index: 1;
-    
+  background-image: url(../assets/wallTextures/hip_square.png);
+  background-repeat: repeat;
+  width: 110%;
+  height: 40%;
+  top: 0px;
+  position: fixed;
 }
 
 .wallBackgroundIndex{
-    background-image: url(../assets/wallTextures/ricepaperYellow.png);
-    background-repeat: repeat;
-    position: relative;
-    z-index: -1;
-    /* width: 110%; */
-    height: 500px;
-    bottom: 0px;
-}
+  background-image: url(../assets/wallTextures/ricepaperYellow.png);
+  background-repeat: repeat;
+  position: fixed;
+  width: 110%;
+  height: 60%;
+  bottom: 0px;
 }
 
 .wallBackgroundGallery{
@@ -62,14 +64,14 @@
   }
   
 .ripindex{
-    /* background-image: url("../assets/paperRip.png"); */
+    background-image: url(../assets/paperRip.png);
     background-repeat: repeat-x;
-    width: 800px;
-    height:140px;
-    position:absolute;
-    z-index: 1;
-    /* bottom: -70px */
-    top: 235px;
+    background-size: 350px;
+    background-position: top;
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    top: -7%;
 }
 .myPens{
   position: absolute;
@@ -90,7 +92,7 @@
   font-size: 50px;
   position: relative;
   left: 37%;
-  top: 35%;
+  top: 25%;
 }
 .titleFrame{
   position: relative;
@@ -109,11 +111,30 @@
     position: absolute;
     top: 20%;
     left: 42%;
-    /* margin: 20px; */
+    background-size: 180px;
     width: 200px;
-    height:200px;
-    background-image: '../assets/bStickyExploreCommunity.png';
+    height: 200px;
 }
-.mainButton{
+#cwSticky{
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  background-size: 180px;
+  width: 200px;
+  height: 200px;
+}
+#vgSticky{
+  position: absolute;
+  top: 20%;
+  left: 73%;
+  background-size: 180px;
 
 }
+.mainButton{
+  width: 200px;
+  height: 200px;
+}
+.mainButton:hover{
+  transform: rotate(10deg);
+}
+

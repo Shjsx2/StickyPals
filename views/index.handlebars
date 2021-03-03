@@ -13,19 +13,30 @@
 
     <body >
 
-        {{!-- class = "wallBackgroundIndex" --}}
-        <div class = "mygrid">
+
             <div class="jumbotronDesign2">
-                <img class = "ripindex" src='../assets/paperRip.png'>
+                {{!-- <img class = "ripindex" src='../assets/paperRip.png'> --}}
+                
                 <img class = "myPens" src = '../assets/pens1.png'>
                 <img class = "myPens2" src = '../assets/pens2.png'>
-                <p class = "titleFont">Sticky Pals!</p>
-                {{!-- <img class = "titleFrame" src = '../assets/drawnframe1.png'> --}}
+                <p class = "titleFont">Welcome to</p>
+                <p class = "titleFont">Sticky Pals</p>
             </div>
             
             <div class="wallBackgroundIndex">
+                <div class="ripindex"></div>
 
-                <button  id="ecSticky" onclick="location.href='/exploreCommunity';"> </button>
+                <img src= "../assets/bStickyCreateWalls.png" id='cwSticky' class = "mainButton" onclick="showAlert('#alert1')">
+                <img src= "../assets/bStickyExploreCommunity.png" id='ecSticky' class = "mainButton" onclick="location.href='/exploreCommunity';">
+                <img src= "../assets/bStickyExploreCommunity.png" id='vgSticky' class = "mainButton" onclick="location.href='/viewGallery';">
+                
+{{!-- 
+                <div id="ecSticky" class = "mainButton" onclick="location.href='/exploreCommunity';">
+                </div>
+
+                <div id="vgSticky" class = "mainButton" onclick="location.href='/viewGallery';">
+                </div> --}}
+
             
                 {{!-- alerts --}}
                 <div class="card" id = "alert1" style="width: 18rem;">
@@ -38,7 +49,7 @@
                     </div>
                 </div>
 
-                {{!-- main buttons --}}
+                
                 {{!-- <div> --}}
                     {{!-- <div  class="singleWrap" onclick="showAlert('#alert1')">
                         <img src='icons/redirect.png'>
@@ -58,6 +69,6 @@
 
 
             </div>
-        </div>
+        {{!-- </div> --}}
     </body>
 </html>
