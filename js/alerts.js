@@ -1,5 +1,4 @@
 //hide and show alert
-
 // $(document).ready(function(){
 //     $("#alert").hide();
 // })
@@ -23,6 +22,9 @@ $(document).ready(function() {
     $("#alert").hide()
     $("#publishAlert").hide()
     $("#saveAlert").hide()
+    $("#alertNote").hide()
+    currentUser = window.localStorage.getItem('currentUser')
+    $(".jumbotronDesign2 h1").text("Hello, "+currentUser +"!")
 })
 
 function hideAlert(tag){
@@ -48,7 +50,7 @@ function fade(tag){
   }
   
 $(document).ready(function() {
-    $("#headerframe").fade();
+    $("#headerframe").fadeIn();
 })
 
 
