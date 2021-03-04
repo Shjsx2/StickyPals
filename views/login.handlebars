@@ -13,6 +13,8 @@
    <link rel="stylesheet" href="../css/login.css">
    <link rel="stylesheet" href="../css/styles.css">
    <script src="../js/createWall.js" ></script>
+   	{{> facebook}}
+	<script src="/js/facebook.js"></script>
 </head>
 
 <body>
@@ -36,6 +38,18 @@
       <div class="userInput">
          <button type="button" id="loginButton" class="btn btn-outline-info btn-lg btn-block" onclick="location.href='/index';" >login</button>
       </div>
+
+      <div class="userInput ">
+      <div class="login-or">
+         <hr class="hr-or">
+         <div>
+            <p class="facebookLogin"> or login through Facebook
+               <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+               </fb:login-button>
+			   </p>
+         </div>
+      </div>
+   </div>
 
       <div class="userInput">
          <p class="text-center">Don't have an account yet? <a href="#" id="createAccount" onclick="location.href='/signup';">create one</a></p>
