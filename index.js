@@ -65,6 +65,10 @@ app.get('/communityProject2', function(req,res){
   res.render('communityProject2');
 })
 
+app.get('/clearStorage', function(req, res){
+  res.render('clearStorage')
+})
+
 // Example route
 // app.get('/users', user.list);
 

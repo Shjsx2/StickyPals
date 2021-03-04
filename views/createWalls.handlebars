@@ -21,6 +21,7 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
 
 
     <body id = "wallBod" class = "wallBackground0">
+
         <div class="headerWrap">
             <img id='back' src='../icons/L/back.png'>
             <a contenteditable="true" style="text-decoration: underline;">UNNAMED</a>
@@ -37,17 +38,45 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
             <div class = "texture2" onclick="changeBg2()" ></div>
             <div class = "texture3" onclick="changeBg3()" ></div>
             <div class = "texture4" onclick="changeBg4()" ></div>
-
         </div>
+        
         <div id='moreDropdown'>
           <a id = "del" onclick="showAlert('#alert')">delete wall</a>
-          <a id = "pub" onclick="publishThis()">publish wall</a>
+          <a id = "pub" onclick="publishThis('#publishAlert')">publish wall</a>
         </div>
 
-
+        <div id = "colorDropdown" >
+          <a id = "blueColor" onclick = "changeToBlue()">blue</a>
+          <a id = "purpleColor" onclick="changeToPurple()">purple</a>
+          <a id = "pinkColor" onclick="changeToPink()">pink</a>
+          <a id = "redColor" onclick="changeToRed()">red</a>
+          <a id = "orangeColor" onclick="changeToOrange()">orange</a>
+          <a id = "yellowColor" onclick="changeToYellow()">yellow</a>
+          <a id = "greenColor" onclick="changeToGreen()">green</a>
+        </div>
 
 
         <ul class='container' >
+          
+          {{!-- deleteAlert --}}
+          <div class="card" id = "alert" style="width: 18rem;z-index: 9999;">
+            <div class="card-body">
+                <p class="card-text">Are you sure you want to delete this wall?</p>
+                <div class="alert-button-wrap">
+                    <button class="btn btn-info" id = "noButton"onclick = "hideAlert('#alert')">No</button>
+                    <button class="btn btn-outline-info" id = "yesButton" onclick="location.href='/index';">Yes</button>
+                </div>
+            </div>
+        </div>
+
+        <div class = "alert alert-info" id="publishAlert" role="alert" style="z-index:9999;">
+            Your wall has been published!
+        </div> 
+
+        <div class = "alert alert-info" id="saveAlert" role="alert" style="z-index=9999;">
+            Your wall is saved locally!
+        </div>
+
           <div id='noteList'> 
           </div>
             {{! --sampleNotes --}}
@@ -59,15 +88,7 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
                 <p class = "textContainer" >goal tracking apps</p>
               </a> --}}
              
-              <div id = "colorDropdown" >
-                <a id = "blueColor" onclick = "changeToBlue()">blue</a>
-                <a id = "purpleColor" onclick="changeToPurple()">purple</a>
-                <a id = "pinkColor" onclick="changeToPink()">pink</a>
-                <a id = "redColor" onclick="changeToRed()">red</a>
-                <a id = "orangeColor" onclick="changeToOrange()">orange</a>
-                <a id = "yellowColor" onclick="changeToYellow()">yellow</a>
-                <a id = "greenColor" onclick="changeToGreen()">green</a>
-              </div>
+
             </li>
 
         </ul>
@@ -77,17 +98,6 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
             <button onclick="location.href='/index';" >Yes</button>
             <button onclick = "hideAlert()">No</button>
           </div>  --}}
-
-          {{!-- deleteAlert --}}
-          <div class="card" id = "alert" style="width: 18rem;z-index: 9999;">
-            <div class="card-body">
-                <p class="card-text">Are you sure you want to delete this wall?</p>
-                <div class="alert-button-wrap">
-                    <button class="btn btn-info" id = "noButton"onclick = "hideAlert('#alert')">No</button>
-                    <button class="btn btn-outline-info" id = "yesButton" onclick="location.href='/index';">Yes</button>
-                </div>
-            </div>
-        </div>
 
           {{!-- not implemented yet --}}
           {{!-- <h2 class = "redletters" id = "red">Your wall was deleted</h2> --}}

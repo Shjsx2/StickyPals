@@ -95,8 +95,11 @@
 
 .card {
     display: none; 
-    top: 40%;
-    left: 23%;
+    /* top: 40%;
+    left: 23%; */
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
     position: fixed !important;
     text-align: center;
     vertical-align: middle; 

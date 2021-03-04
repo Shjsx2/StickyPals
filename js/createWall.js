@@ -81,14 +81,14 @@ function onSaveClick() {
   // todo: give every note an unique id and save
   var notes = []
   var wallTitle = $(".headerWrap a").text();
-  $('.container li a').each(function(idx){
-    var title = $(this).find('h2').text()
-    var text = $(this).find('p').text()
+  $('.container .note').each(function(idx){
+    var title = $(this).find('.headerContainer').text()
+    var text = $(this).find('.textContainer').text()
     notes.push({'title': title, 'text': text})
   })
   var current = JSON.parse(window.localStorage.getItem("gallery"))    
   if(!current) current = {};
-
+  console.log(notes)
   if(notes.length === 0)
     current[wallTitle] = {}
   else
@@ -96,7 +96,10 @@ function onSaveClick() {
 
   console.log(current)
   window.localStorage.setItem('gallery', JSON.stringify(current))
-  alert("Notes saved to local storage")
+  $("#saveAlert").fadeIn()
+  setTimeout(function(){$("#saveAlert").fadeOut()}, 2000)
+  // alert("Notes saved to local storage")
+
 }
 
 //touch API not wokring 
@@ -130,9 +133,11 @@ function dragNotes(e) {
   })
 }
 
-//publishAlert
+// publishAlert
   function publishThis() {
-    alert("Your wall has been published!");
+    $("#publishAlert").fadeIn()
+    setTimeout(function(){$("#publishAlert").fadeOut()}, 2000)
+    // alert("Your wall has been published!");
   }
 
 function changeBg(background){
@@ -164,9 +169,7 @@ function changeBg4(){
 }
 
 function onDropdownClick (){
-  console.log(id)
-  $("#colorDropdown").toggle('show')
-
+  $("#colorDropdown").show('show')
 }
 
 
