@@ -9,58 +9,65 @@ darker blue: 74aec6
 black: 0b0a08
 */
 
-.capsule{
-    position: static;
-    width: 319px;
-    height: 64px;
-    left: 28px;
-    top: 138px;
-    background-color: #e0e0e0;
-    margin: 10px;
-    border-radius: 30px;
-}
 
 .headerWrap {
     width: 110%;
     height: 100px;
     background-color: #74aec6;
     display: flex;
-    align-items: center;
+    align-content: center;
     transform: translateX(-5%) translateY(-10%);
+    flex-direction: row;
+    justify-content: center;
+}
+
+.drawingContainer{
+  display: flex;
+  align-content: center;
+  /* transform: translateX(-5%) translateY(-10%); */
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flexContainer{
+    /* margin-top: 15%; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .post{
     position: relative;
     width: 200px;
     height: 200px;
-    left: 40%;
-    top: 30%;
     outline: 3px;
     text-align: center;
     vertical-align: center;
     background-image: url(../assets/drawnframe5.png);
     background-repeat: no-repeat;
     background-size: 200px;
-    margin-top: 50px;
+    margin-bottom: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 20px;
   }
 
-  .exploreCommunityBackground{
-    background-image: url("../assets/wallTextures/natural_paper.png");
-    background-repeat: repeat;
-  }
+.exploreCommunityBackground{
+  background-image: url("../assets/wallTextures/natural_paper.png");
+  background-repeat: repeat;
+}
 
-  .headerFont{
-    font-family: ItIsWritten;
-    font-size: 30px;
-    position: absolute;
-    left: 40%;
-  }
+.headerFont{
+  font-family: ItIsWritten;
+  font-size: 30px;
+  /* position: absolute;
+  left: 40%; */
+  align-self: center;
+}
 
 #ecDrawing1{
-    position:absolute;
-    top:40%;
-    left:8%;
-    opacity:50%
+  align-self: center;
 }
 #ecDrawing2{
     position: absolute;
@@ -69,7 +76,21 @@ black: 0b0a08
     width: 100px;
     opacity:50%
 }
-.post:hover{
-    background-color: #74aec6;
-
+#circleCommunity:hover{
+    animation: fadeInAnimation ease 1s; 
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
 }
+
+.ripCommunity{
+  background-image: url(../assets/paperRip.png);
+  background-repeat: repeat-x;
+  background-size: 350px;
+  background-position: top;
+  width: 110%;
+  height: 30%;
+  position: absolute;
+  top: 70px;
+  left: -10px;
+}
+
