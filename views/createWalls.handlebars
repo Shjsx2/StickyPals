@@ -29,8 +29,16 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
         </div>
 
         <div class="toolWrap">
-            <img id='addButton' src='../icons/L/notes.png' alt="text1" title="add">
-            <img id='drag'src='../icons/L/drag.png'alt="text1" title="Click once to able dragging; click twice to disable it">
+          <div class="input-wrapper" data-tooltip="add a new note">
+              <img id='addButton' src='../icons/L/notes.png'>
+         </div>
+
+          <div class="input-wrapper" data-tooltip="draggble. Click twice to disable">
+              <img id='drag'src='../icons/L/drag.png'>
+         </div>
+
+            {{!-- <img id='addButton' src='../icons/L/notes.png' alt="text1" title="add"> --}}
+            {{!-- <img id='drag'src='../icons/L/drag.png'alt="text1" title="Click once to able dragging; click twice to disable it"> --}}
             <img id ='more' onclick='onMoreClick()' src='../icons/L/more.png'>
             {{!-- change bg --}}
             <div class = "texture0" onclick="changeBg0()" ></div>
