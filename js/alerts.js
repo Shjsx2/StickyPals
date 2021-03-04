@@ -24,7 +24,7 @@ $(document).ready(function() {
     $("#saveAlert").hide()
     $("#alertNote").hide()
     currentUser = window.localStorage.getItem('currentUser')
-    $(".jumbotronDesign2 h1").text("Hello, "+currentUser +"!")
+    $(".jumbotronDesign3 #urName").text("Hello, "+currentUser +"!")
 })
 
 function hideAlert(tag){
