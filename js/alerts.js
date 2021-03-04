@@ -101,5 +101,10 @@ function checkReload() {
 }
 
 
+function linking(link){
+    window.location.href = link;
+}
+
+
 
 

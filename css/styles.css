@@ -115,7 +115,7 @@
     float: right;
 }
 
-
-.jumbotronDesign2{
-    height: 15vw;
+#fullPage{
+    width:100%;
+    height:100%;
 }

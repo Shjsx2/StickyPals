@@ -14,3 +14,42 @@
 h3 {
   color: #000000
 }
+
+.headerWrap2 {
+  width: 100%;
+  height: 100px;
+  background-color: #74aec6;
+  display: flex;
+  align-content: center;
+  transform: translateX(-5%) translateY(-10%);
+
+}
+
+.wallBgGallery2{
+  background-image: url("../assets/wallTextures/natural_paper.png");
+  background-repeat: repeat;
+}
+
+.headerFont2{
+  font-family: ItIsWritten;
+  font-size: 30px;
+  /* position: relative; */
+  /* left: 10%; */
+  align-self: center;
+}
+
+#vgDrawing1{
+  width: 150px;
+  /* position: relative; */
+  /* top: 25%;
+  left: 40%; */
+  align-self: center;
+}
+
+.vgContainer{
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}

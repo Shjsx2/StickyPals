@@ -12,23 +12,25 @@
       </head>
 
     <body >
+            <div class="jumbotronDesign2">                
+                <img class = "myPens" src = '../assets/pens1.png'>
 
-        {{!-- class = "wallBackgroundIndex" --}}
-        <div class = "mygrid">
-            <div class="jumbotronDesign2">
-                {{!-- <img src = '../assets/paperRip.png' style="background-repeat: repeat-x;    
-                                                            width: 800px;
-                                                            position:absolute;
-                                                            z-index: 1;
-                                                            bottom: -70px;"> --}}
-                {{!-- <a class="ripindex"></a> --}}
-                <img class = "ripindex" src='../assets/paperRip.png'>
-                <h1 class="display-3" style='margin-left: 20px; margin-top: 5%;'>Hello</h1>
-                <p class="h2" style='margin-left: 20px; margin-top: 1%;'>Welcome to Sticky Pals!</p>
+                 <div class="jumbotronDesign3">
+                    <p class = "titleFont">Welcome to</p>
+                    <p class = "titleFont">Sticky Pals</p>
+                </div>
+
+                <img class = "myPens2" src = '../assets/pens2.png'>
             </div>
             
-            <div class="wallBackgroundIndex">
-                <div></div>
+            <div class="jumbotronDesign4">
+                <div class="ripindex"></div>
+
+                <img src= "../assets/bStickyCreateWalls.png" id='indexSticky' class = "mainButton" onclick="showAlert('#alert1')">
+                <img src= "../assets/bStickyExploreCommunity.png" id='indexSticky' class = "mainButton" onclick="location.href='/exploreCommunity';">
+                <img src= "../assets/bStickyExploreCommunity.png" id='indexSticky' class = "mainButton" onclick="location.href='/viewGallery';">
+            
+                {{!-- alerts --}}
                 <div class="card" id = "alert1" style="width: 18rem;">
                     <div class="card-body">
                         <p class="card-text">Would you like to create a wall?</p>
@@ -39,23 +41,19 @@
                     </div>
                 </div>
 
-                {{!-- main buttons --}}
-                <div class ="groupWrap">
-                    <div  class="singleWrap" onclick="showAlert('#alert1')">
+                
+                {{!-- <div> --}}
+                    {{!-- <div  class="singleWrap" onclick="showAlert('#alert1')">
                         <img src='icons/redirect.png'>
                         <a class="textWrap"  >Create Walls</a>
                     </div>
                     <div onclick="location.href='/viewGallery'" class="singleWrap">
                         <img src='icons/redirect.png'>
                         <a class="textWrap">View Gallery</a>
-                    </div>
-                    <div onclick="location.href='/exploreCommunity';" class="singleWrap">
-                        <img src='icons/redirect.png'>
-                        <a class="textWrap">Explore Community</a>
-                    </div>
-                </div>
+                    </div> --}}                    
+                {{!-- </div> --}}
 
             </div>
-        </div>
+        {{!-- </div> --}}
     </body>
 </html>
