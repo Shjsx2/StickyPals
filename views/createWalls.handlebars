@@ -23,14 +23,14 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
     <body id = "wallBod" class = "wallBackground0">
 
         <div class="headerWrap">
-            <img id='back' src='../icons/L/back.png'>
+            <img id='back' src='../icons/L/back.png'onclick="showAlert('#leaveAlert')">
             <a contenteditable="true" style="text-decoration: underline;">UNNAMED</a>
             <img id ='save' src='../icons/Buttons/save.png'>
         </div>
 
         <div class="toolWrap">
-            <img id='addButton' src='../icons/L/notes.png'>
-            <img id='drag'src='../icons/L/drag.png'>
+            <img id='addButton' src='../icons/L/notes.png' alt="text1" title="add">
+            <img id='drag'src='../icons/L/drag.png'alt="text1" title="Click once to able dragging; click twice to disable it">
             <img id ='more' onclick='onMoreClick()' src='../icons/L/more.png'>
             {{!-- change bg --}}
             <div class = "texture0" onclick="changeBg0()" ></div>
@@ -46,13 +46,13 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
         </div>
 
         <div id = "colorDropdown" >
-          <a id = "blueColor" onclick = "changeToBlue()">blue</a>
-          <a id = "purpleColor" onclick="changeToPurple()">purple</a>
-          <a id = "pinkColor" onclick="changeToPink()">pink</a>
-          <a id = "redColor" onclick="changeToRed()">red</a>
-          <a id = "orangeColor" onclick="changeToOrange()">orange</a>
-          <a id = "yellowColor" onclick="changeToYellow()">yellow</a>
-          <a id = "greenColor" onclick="changeToGreen()">green</a>
+          <a onclick = "changeColor(this)">blue</a>
+          <a onclick="changeColor(this)">purple</a>
+          <a onclick="changeColor(this)">pink</a>
+          <a onclick="changeColor(this)">red</a>
+          <a onclick="changeColor(this)">orange</a>
+          <a onclick="changeColor(this)">yellow</a>
+          <a onclick="changeColor(this)">green</a>
         </div>
 
 
@@ -64,6 +64,17 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
                 <p class="card-text">Are you sure you want to delete this wall?</p>
                 <div class="alert-button-wrap">
                     <button class="btn btn-info" id = "noButton"onclick = "hideAlert('#alert')">No</button>
+                    <button class="btn btn-outline-info" id = "yesButton" onclick="location.href='/index';">Yes</button>
+                </div>
+            </div>
+        </div>
+
+        {{!-- leaveAlert --}}
+        <div class="card" id = "leaveAlert" style="width: 18rem;z-index: 9999;">
+            <div class="card-body">
+                <p class="card-text">Are you sure you want to discard this wall?</p>
+                <div class="alert-button-wrap">
+                    <button class="btn btn-info" id = "noButton"onclick = "hideAlert('#leaveAlert')">No</button>
                     <button class="btn btn-outline-info" id = "yesButton" onclick="location.href='/index';">Yes</button>
                 </div>
             </div>

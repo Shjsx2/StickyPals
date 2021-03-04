@@ -1,11 +1,11 @@
 $(document).ready(function () {
     addButton = $("#addButton");
     saveButton = $("#save");
-    back = $("#back");
+    previous = $("#previous");
     text = $("#textBox");
     dragNote = $("#drag");
     addButton.click(addNote);
-    back.click(goPrevious);
+    previous.click(goPrevious);
     saveButton.click(onSaveClick);
     dragNote.click(dragNotes);
     $('.deleteButton').click(deleteNotes)
@@ -51,16 +51,13 @@ $(document).ready(function () {
   // });
 
 //adddNotes
-function addNote(e, title='new note', text='start...') {
+function addNote(e, title='Title', text='start...') {
   // todo: give random colors to new note
   console.log("loading "+title)
-  var colors = ["#c4c4c4", "#f2f2f2", "#000000"]
-  var c = colors[Math.floor(Math.random()*colors.length)]
-  
   // $("body ul").append('<li class="note"><img class = "colorbutton" src="../icons/colorpallette.png" onclick = "showColors()"><img class="deleteButton" src="../icons/L/delete.png" contenteditable="false"><a contenteditable="true"><h3 class = "headerContainer">'+title+'</h3><p class = "textContainer">'+text+'</p></a></li>');
-
-  $("body ul").append(' <li class = "note"><img class = "colorbutton" src="../icons/colorpallette.png"><img class="deleteButton" src="../icons/L/delete.png" contenteditable="false"><a contenteditable="true" class = "blueNote" id = "changeableNote"><p class = "headerContainer">'+title+'</p><p class = "textContainer" >'+text+'</p></a><div id = "colorDropdown" ><a id = "blueColor" onclick = "changeToBlue()">blue</a><a id = "purpleColor" onclick="changeToPurple()">purple</a><a id = "pinkColor" onclick="changeToPink()">pink</a><a id = "redColor" onclick="changeToRed()">red</a><a id = "orangeColor" onclick="changeToOrange()">orange</a><a id = "yellowColor" onclick="changeToYellow()">yellow</a><a id = "greenColor" onclick="changeToGreen()">green</a></div></li> ').click(onDropdownClick)
-
+  var id = "note"+ ($("body ul li").length+1).toString()
+  $("body ul").append('<li class = "note" id='+id+' ><img class = "colorbutton" src="../icons/colorpallette.png"><img class="deleteButton" src="../icons/L/delete.png" contenteditable="false"><a contenteditable="true"><p class = "headerContainer">'+title+'</p><p class = "textContainer" >'+text+'</p></a></li> ')
+  $('#'+id+' .colorbutton').click({id : id}, onDropdownClick)
   $(".deleteButton").click(deleteNotes)
   // $(".dragButton").click(dragNotes)
 }
@@ -69,9 +66,9 @@ function addNote(e, title='new note', text='start...') {
 function onMoreClick() {
   $("#moreDropdown").toggle('show')
 }
-function colorClick() {
-  $("#colorDropdown").toggle('show')
-}
+// function colorClick() {
+//   $("#colorDropdown").toggle('show')
+// }
 
 function goPrevious(){
   history.go(-1);
@@ -168,23 +165,27 @@ function changeBg4(){
   changeBg('wallBackground4');
 }
 
-function onDropdownClick (){
-  $("#colorDropdown").show('show')
+function onDropdownClick (event){
+  var notePos = $(this).parents('li').children('a').position()
+  console.log($(this).parents('li').children('a').position())
+  $("#colorDropdown").css('top', notePos.top+50)
+  $("#colorDropdown").css('left', notePos.left+190)
+  $("#colorDropdown").toggle('show')
+  var id = event.data.id
+  window.localStorage.setItem('selectedNote', id)
 }
 
-
-function changeColor(c){
-  var color_list = ['greenNote', 'purpleNote', 'pinkNote','redNote', 'orangeNote', 'yellowNote', 'blueNote'];
-  color_list.forEach(element => {
-    if (element == c){
-      document.getElementById("changeableNote").classList.add(c);
-    }
-    else{
-      document.getElementById("changeableNote").classList.remove(element);
-    }
-  })
+function changeColor(element){
+  var c = element.text
+  var bgPath = "../assets/stickynotes/sticky_"+c+".png"
+  var id = window.localStorage.getItem('selectedNote')
+  $('#'+id+' a').css("background", "url("+bgPath+") no-repeat")
+  $('#colorDropdown').toggle('show')
 }
 
+$(document).tooltip({show: null});
+
+//changeColors
 function changeToBlue(){
   changeColor('blueNote'); 
   colorClick(); 

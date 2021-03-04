@@ -261,55 +261,14 @@ h2 {
 
 } */
 
-.blueNote{
+.note a{
   width: 250px;
   height: 250px;
   padding: 12px;
-  background: url("../assets/stickynotes/sticky_lightblue_s.png")no-repeat left top;
+  background: url("../assets/stickynotes/sticky_blue.png")no-repeat left top;
   display:block;
 }
-.greenNote{
-  width: 250px;
-  height: 250px;
-  padding: 12px;
-  background: url("../assets/stickynotes/sticky_green_s.png")no-repeat left top;
-  display:block;
-}
-.purpleNote{
-  width: 250px;
-  height: 250px;
-  padding: 12px;
-  background: url("../assets/stickynotes/sticky_purple.png")no-repeat left top;
-  display:block;
-}
-.pinkNote{
-  width: 250px;
-  height: 250px;
-  padding: 12px;
-  background: url("../assets/stickynotes/sticky_pink.png")no-repeat left top;
-  display:block;
-}
-.orangeNote{
-  width: 250px;
-  height: 250px;
-  padding: 12px;
-  background: url("../assets/stickynotes/sticky_orange.png")no-repeat left top;
-  display:block;
-}
-.yellowNote{
-  width: 250px;
-  height: 250px;
-  padding: 12px;
-  background: url("../assets/stickynotes/sticky_yellow.png")no-repeat left top;
-  display:block;
-}
-.redNote{
-  width: 250px;
-  height: 250px;
-  padding: 12px;
-  background: url("../assets/stickynotes/sticky_red.png")no-repeat left top;
-  display:block;
-}
+
 
 
 .container li div{
@@ -337,12 +296,11 @@ h2 {
 
 #colorDropdown {
   display: none;
-  position: relative;
+  position: absolute;
   width: 112px;
-  margin-top: -100px;
-  margin-left: 45%;
-  background-color: #858585;
-  z-index: 1;
+  background-color: #486c7c;
+  z-index: 999;
+  opacity: 80%;
 }
 
 #colorDropdown a {
@@ -356,7 +314,7 @@ h2 {
   text-align:center;
 }
 
-/* #colorDropdown a:hover{
+#colorDropdown a:hover{
   background-color: #ddd;
-} */
-   
+}
+
