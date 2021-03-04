@@ -49,7 +49,7 @@ function saveFile(){
     '<img src="' + result['image'] + '" class="img">' +
     '<p>' + result['title'] + '</p>' +
     '<p><small>' + result['date'] +
-    '</small></p></a>'; 
+    '</small></p></a>';
 }
 
  */
