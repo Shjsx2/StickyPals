@@ -1,0 +1,16 @@
+{
+    "note": [
+    {
+        "name":"Exercise app",
+        "content":"Self-tracking daily exercise"
+    }, 
+    {
+        "name":"shopping app",
+        "content":"Display coupons and discount"
+    },
+    {
+        "name":"mediation app",
+        "content":"Help user maintain a work-life balance"
+    }
+    ]
+}

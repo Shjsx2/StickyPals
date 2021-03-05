@@ -2,7 +2,7 @@ $(document).ready(function(){
     const gallery = JSON.parse(window.localStorage.getItem('gallery'));
     console.log(gallery)
     for(var item in gallery){
-        $('body').append("<div class='project'><img class = 'trashIt' src='../icons/L/trash.png'><a href='#'><h3>"+item+"</h3></a></div>")
+        $('.flexContainer').append("<div class='project'><div style='position:relative'><img class = 'trashIt' src='../icons/L/trash.png'><a href='#'><h3>"+item+"</h3></a></div></div>")
     }
     $(".project a").click(onGalleryClick)
     $(".trashIt").click(deleteIt)

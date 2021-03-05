@@ -51,7 +51,7 @@ app.get('/viewGallery', function(req,res){
 })
 
 app.get('/samplePage', function(req,res){
-  res.render('samplePage');
+  res.render('samplePage', require('./sample.json'));
   })
 app.get('/signup', function(req,res){
   res.render('signup');
