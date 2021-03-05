@@ -23,7 +23,7 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
     <body id = "wallBod" class = "wallBackground0">
 
         <div class="headerWrap">
-            <img id='back' src='../icons/L/back.png'onclick="showAlert('#leaveAlert')">
+            <img id='back' src='../icons/L/back.png'onclick="onBack()">
             <a contenteditable="true" style="text-decoration: underline;">UNNAMED</a>
             <img id ='save' src='../icons/Buttons/save.png'>
         </div>
@@ -72,20 +72,23 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
                 <p class="card-text">Are you sure you want to delete this wall?</p>
                 <div class="alert-button-wrap">
                     <button class="btn btn-info" id = "noButton"onclick = "hideAlert('#alert')">No</button>
-                    <button class="btn btn-outline-info" id = "yesButton" onclick="location.href='/index';">Yes</button>
+                    <button class="btn btn-outline-info" id = "yesButton" onclick="deleteWall()">Yes</button>
                 </div>
             </div>
         </div>
 
         {{!-- leaveAlert --}}
-        <div class="card" id = "leaveAlert" style="width: 18rem;z-index: 9999;">
+        {{!-- <div class="card" id = "leaveAlert" style="width: 18rem;z-index: 9999;">
             <div class="card-body">
-                <p class="card-text">Are you sure you want to discard this wall?</p>
+                <p class="card-text">You haven't saved your wall yet, are you sure you want to leave?</p>
                 <div class="alert-button-wrap">
                     <button class="btn btn-info" id = "noButton"onclick = "hideAlert('#leaveAlert')">No</button>
                     <button class="btn btn-outline-info" id = "yesButton" onclick="location.href='/index';">Yes</button>
                 </div>
             </div>
+        </div> --}}
+        <div class = "alert alert-info" id="leaveAlert" role="alert" style="z-index=9999;">
+            Your wall will be saved automatically in the gallery!
         </div>
 
         <div class = "alert alert-info" id="publishAlert" role="alert" style="z-index:9999;">

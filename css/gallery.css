@@ -53,3 +53,8 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.trashIt {
+  float: right;
+  cursor:pointer;
+}

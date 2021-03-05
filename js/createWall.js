@@ -26,7 +26,7 @@ $(document).ready(function () {
     notes = gallery[key];
     if(!notes || Object.keys(notes).length === 0) return;
     notes.forEach(function(note) {
-      addNote(null, note.title, note.text)
+      addNote(null, note.color, note.title, note.text)
     })
 })
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
   // });
 
 //adddNotes
-function addNote(e, title='Title', text='start...') {
+function addNote(e,color,  title='Title', text='start...') {
   // todo: give random colors to new note
   console.log("loading "+title)
   // $("body ul").append('<li class="note"><img class = "colorbutton" src="../icons/colorpallette.png" onclick = "showColors()"><img class="deleteButton" src="../icons/L/delete.png" contenteditable="false"><a contenteditable="true"><h3 class = "headerContainer">'+title+'</h3><p class = "textContainer">'+text+'</p></a></li>');
@@ -59,6 +59,7 @@ function addNote(e, title='Title', text='start...') {
   $("body ul").append('<li class = "note" id='+id+' ><img class = "colorbutton" src="../icons/colorpallette.png"><img class="deleteButton" src="../icons/L/delete.png" contenteditable="false"><a contenteditable="true"><p class = "headerContainer">'+title+'</p><p class = "textContainer" >'+text+'</p></a></li> ')
   $('#'+id+' .colorbutton').click({id : id}, onDropdownClick)
   $(".deleteButton").click(deleteNotes)
+  $('#'+id+' a').css('background', color)
   // $(".dragButton").click(dragNotes)
 }
 
@@ -66,23 +67,28 @@ function addNote(e, title='Title', text='start...') {
 function onMoreClick() {
   $("#moreDropdown").toggle('show')
 }
-// function colorClick() {
-//   $("#colorDropdown").toggle('show')
-// }
 
-function goPrevious(){
-  history.go(-1);
+function goPrevious() {
+  window.location.href = '/index'
+}
+
+function onBack() {
+  onSaveClick();
+  setTimeout(function(){history.go(-1)}, 2300)
 }
 
 function onSaveClick() {
   // todo: give every note an unique id and save
   var notes = []
   var wallTitle = $(".headerWrap a").text();
+  window.localStorage.setItem('currentWall', wallTitle)
   $('.container .note').each(function(idx){
     var title = $(this).find('.headerContainer').text()
     var text = $(this).find('.textContainer').text()
-    notes.push({'title': title, 'text': text})
+    var color = $(this).find('a').css('background')
+    notes.push({'title': title, 'text': text, 'color':color})
   })
+  console.log(notes)
   var current = JSON.parse(window.localStorage.getItem("gallery"))    
   if(!current) current = {};
   console.log(notes)
@@ -93,8 +99,8 @@ function onSaveClick() {
 
   console.log(current)
   window.localStorage.setItem('gallery', JSON.stringify(current))
-  $("#saveAlert").fadeIn()
-  setTimeout(function(){$("#saveAlert").fadeOut()}, 2000)
+  $("#leaveAlert").fadeIn()
+  setTimeout(function(){$("#leaveAlert").fadeOut()}, 2000)
   // alert("Notes saved to local storage")
 
 }
@@ -183,40 +189,13 @@ function changeColor(element){
   $('#colorDropdown').toggle('show')
 }
 
+function deleteWall() {
+  var currentData = JSON.parse(localStorage.getItem('gallery'));
+  var wall = $('.headerWrap a').text()
+  delete currentData[wall]
+  localStorage.setItem('gallery', JSON.stringify(currentData))
+  window.location.href = '/index'
+}
+
 $(document).tooltip({show: null});
 
-//changeColors
-function changeToBlue(){
-  changeColor('blueNote'); 
-  colorClick(); 
-}
-
-function changeToPurple(){
-  changeColor('purpleNote');  
-  colorClick();
-}
-
-function changeToPink(){
-  changeColor('pinkNote');  
-  colorClick();
-}
-
-function changeToRed(){
-  changeColor('redNote');  
-  colorClick();
-}
-
-function changeToOrange(){
-  changeColor('orangeNote'); 
-  colorClick(); 
-}
-
-function changeToYellow(){
-  changeColor('yellowNote');  
-  colorClick();
-}
-
-function changeToGreen(){
-  changeColor('greenNote');  
-  colorClick();
-}
