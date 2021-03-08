@@ -101,14 +101,16 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
 
           <div id='noteList'> 
           </div>
-            {{! --sampleNotes --}}
-            {{!-- <li class = "note">
-              <img class = "colorbutton" src="../icons/colorpallette.png" onclick = "colorClick()">
-              <img class="deleteButton" src="../icons/L/delete.png" contenteditable="false">
-              <a contenteditable="true" class = "blueNote" id = "changeableNote">
-                <p class = "headerContainer">Brainstorm idea</p>
-                <p class = "textContainer" >goal tracking apps</p>
-              </a> --}}
+                {{#each note}}
+                    <li class='note'>
+                        <img class='colorbutton' src='../icons/colorpallette.png'>
+                        <img class='deleteButton' src='../icons/L/delete.png'>
+                        <a contenteditable="true" style="background: {{color}}">
+                            <p class="headerContainer">{{title}}</p>
+                            <p class='textContainer'>{{text}}</p>
+                        </a>
+                    </li>
+                {{/each}} 
              
 
             </li>

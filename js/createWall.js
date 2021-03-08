@@ -14,7 +14,13 @@ $(document).ready(function () {
     noteList.on('touchmove', function(e){
         console.log("hi")
     })
-    $("#alert").hide();
+
+    $("#leaveAlert").hide();
+    $("#publishAlert").hide()
+    $("#saveAlert").hide()
+    $(".card").hide()
+
+    if(window.location.href.includes('viewNote')) return;
 
     wallTitle = window.localStorage.getItem("currentWall")
     $('.headerWrap a').text(wallTitle==="null" ? "UNNAMED" : wallTitle)
@@ -30,27 +36,6 @@ $(document).ready(function () {
     })
 })
 
-  //draggable 
-  // $( function() {
-  //   $(".note").draggable({
-  //       cursor: "grabbing",
-  //       opacity: 0.5,
-  //       //grid:[300,300],
-  //       snap: true,
-  //       snapTolerance: 30
-  //   });
-  // } );
-
-  //   $('.note').on('focus', function(e){
-  //     $(this).parent().attr('draggable', 'false')
-  //   })
-
-  //   $('.note').on('blur', function(e){
-  //     $(this).parent().attr('draggable', 'true')
-  //   })
-  // });
-
-//adddNotes
 function addNote(e,color,  title='Title', text='start...') {
   // todo: give random colors to new note
   console.log("loading "+title)
@@ -88,10 +73,10 @@ function onSaveClick() {
     var color = $(this).find('a').css('background')
     notes.push({'title': title, 'text': text, 'color':color})
   })
-  console.log(notes)
   var current = JSON.parse(window.localStorage.getItem("gallery"))    
   if(!current) current = {};
   console.log(notes)
+
   if(notes.length === 0)
     current[wallTitle] = {}
   else
@@ -99,10 +84,43 @@ function onSaveClick() {
 
   console.log(current)
   window.localStorage.setItem('gallery', JSON.stringify(current))
+
+  var url = window.location.href
+  if(url.includes('createWall')){
+    saveToDB(notes)
+  } else {
+    var id = window.location.href.split('/')[4]
+    updateNote(id, notes)
+  }
+  console.log(window.location.href.split('/'))
+  // saveToDB(notes)
+  
+
   $("#leaveAlert").fadeIn()
   setTimeout(function(){$("#leaveAlert").fadeOut()}, 2000)
   // alert("Notes saved to local storage")
+}
 
+function updateNote(id, notes){
+  console.log("Updating to ", notes)
+  $.ajax({
+    url: "/updateNote",
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({"id":id, "note": notes})
+  })
+}
+
+function saveToDB(notes){
+  $.ajax({
+    url: "/addNote",
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({"note":notes}),
+    success: function(res){
+      window.location.href = '/viewNote/'+res
+    }
+  })
 }
 
 //touch API not wokring 
