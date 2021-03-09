@@ -25,27 +25,27 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
         <div class="headerWrap">
             <img id='previous' src='../icons/L/back.png'onclick="window.location.href='/exploreCommunity'">
             <a contenteditable="true" style="text-decoration: underline;">Sample Page</a>
-            <img id ='save' src='../icons/Buttons/save.png'>
+            {{!-- <img id ='save' src='../icons/Buttons/save.png'> --}}
         </div>
 
         <div class="toolWrap">
           <div class="input-wrapper" data-tooltip="add a new note">
-              <img id='addButton' src='../icons/L/notes.png'>
+              <img src='../icons/L/notes.png'>
          </div>
 
-          <div class="input-wrapper" data-tooltip="draggble. Click twice to disable">
-              <img id='drag'src='../icons/L/drag.png'>
+          <div class="input-wrapper" data-tooltip="click to toggle dragging">
+              <img src='../icons/L/drag.png'>
          </div>
 
             {{!-- <img id='addButton' src='../icons/L/notes.png' alt="text1" title="add"> --}}
             {{!-- <img id='drag'src='../icons/L/drag.png'alt="text1" title="Click once to able dragging; click twice to disable it"> --}}
-            <img id ='more' onclick='onMoreClick()' src='../icons/L/more.png'>
+            {{!-- <img id ='more' onclick='onMoreClick()' src='../icons/L/more.png'> --}}
             {{!-- change bg --}}
             <div class = "texture0" onclick="changeBg0()" ></div>
-            <div class = "texture1" onclick="changeBg1()" ></div>
+            {{!-- <div class = "texture1" onclick="changeBg1()" ></div>
             <div class = "texture2" onclick="changeBg2()" ></div>
             <div class = "texture3" onclick="changeBg3()" ></div>
-            <div class = "texture4" onclick="changeBg4()" ></div>
+            <div class = "texture4" onclick="changeBg4()" ></div> --}}
         </div>
         
         <div id='moreDropdown'>
@@ -75,7 +75,7 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
                 </div>
             </div>
 
-            <div class = "alert alert-info" id="leaveAlert" role="alert" style="z-index=9999;">
+            {{!-- <div class = "alert alert-info" id="leaveAlert" role="alert" style="z-index=9999;">
                 Your wall will be saved automatically in the gallery!
             </div>
 
@@ -85,7 +85,7 @@ https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-
 
             <div class = "alert alert-info" id="saveAlert" role="alert" style="z-index=9999;">
                 Your wall is saved locally!
-            </div>
+            </div> --}}
                 
                 {{#each note}}
                     <li class='note'>

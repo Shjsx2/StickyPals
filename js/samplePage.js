@@ -6,7 +6,7 @@ $(document).ready(function () {
     addButton.click(addNote);
     saveButton.click(onSaveClick);
     dragNote.click(dragNotes);
-    $('.deleteButton').click(deleteNotes)
+    // $('.deleteButton').click(deleteNotes)
     //DnD
     var noteList = $('#noteList');
     $("#alert").hide();

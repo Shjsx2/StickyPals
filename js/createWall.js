@@ -9,6 +9,7 @@ $(document).ready(function () {
     saveButton.click(onSaveClick);
     dragNote.click(dragNotes);
     $('.deleteButton').click(deleteNotes)
+    $('#share').click(shareNote)
     //DnD
     var noteList = $('#noteList');
     noteList.on('touchmove', function(e){
@@ -20,7 +21,14 @@ $(document).ready(function () {
     $("#saveAlert").hide()
     $(".card").hide()
 
-    if(window.location.href.includes('viewNote')) return;
+    if(window.location.href.includes('viewNote')){
+      console.log("adding id")
+      $(".container .note").each(function(idx){
+        $(this).attr('id', "note"+(idx+1))
+        $(this).find('.colorbutton').click({"id": "note"+(idx+1)}, onDropdownClick)
+      })
+      return;
+    } 
 
     wallTitle = window.localStorage.getItem("currentWall")
     $('.headerWrap a').text(wallTitle==="null" ? "UNNAMED" : wallTitle)
@@ -35,6 +43,20 @@ $(document).ready(function () {
       addNote(null, note.color, note.title, note.text)
     })
 })
+
+function shareNote() {
+  var notes = []
+  var wallTitle = $(".headerWrap a").text();
+  window.localStorage.setItem('currentWall', wallTitle)
+  $('.container .note').each(function(idx){
+    var title = $(this).find('.headerContainer').text()
+    var text = $(this).find('.textContainer').text()
+    var color = $(this).find('a').css('background')
+    notes.push({'title': title, 'text': text, 'color':color})
+  })
+
+  saveToDB(notes, wallTitle)
+}
 
 function addNote(e,color,  title='Title', text='start...') {
   // todo: give random colors to new note
@@ -57,10 +79,10 @@ function goPrevious() {
   window.location.href = '/index'
 }
 
-function onBack() {
-  onSaveClick();
-  setTimeout(function(){history.go(-1)}, 2300)
-}
+// function onBack() {
+//   onSaveClick();
+//   setTimeout(function(){history.go(-1)}, 2300)
+// }
 
 function onSaveClick() {
   // todo: give every note an unique id and save
@@ -87,38 +109,45 @@ function onSaveClick() {
 
   var url = window.location.href
   if(url.includes('createWall')){
-    saveToDB(notes)
+    saveToDB(notes, wallTitle)
   } else {
     var id = window.location.href.split('/')[4]
-    updateNote(id, notes)
+    updateNote(id, wallTitle, notes)
   }
-  console.log(window.location.href.split('/'))
   // saveToDB(notes)
   
-
   $("#leaveAlert").fadeIn()
   setTimeout(function(){$("#leaveAlert").fadeOut()}, 2000)
   // alert("Notes saved to local storage")
 }
 
-function updateNote(id, notes){
+function updateNote(id, title, notes){
   console.log("Updating to ", notes)
   $.ajax({
     url: "/updateNote",
     type: "POST",
     contentType: "application/json",
-    data: JSON.stringify({"id":id, "note": notes})
+    data: JSON.stringify({"id":id, "title": title, "note": notes}),
+    success: function(res){
+      $('#publishAlert').fadeIn()
+      setTimeout(function(){$('#publishAlert').fadeOut()}, 2500)
+    }
   })
 }
 
-function saveToDB(notes){
+function saveToDB(notes, title){
   $.ajax({
     url: "/addNote",
     type: "POST",
     contentType: "application/json",
-    data: JSON.stringify({"note":notes}),
+    data: JSON.stringify({"title":title, "note":notes}),
     success: function(res){
-      window.location.href = '/viewNote/'+res
+      $('#saveAlert').fadeIn()
+      setTimeout(function(){
+        $('#saveAlert').fadeOut();
+        window.location.href = '/viewNote/'+res
+       }, 2500)
+
     }
   })
 }
@@ -142,7 +171,6 @@ function deleteNotes(e) {
 
 //draggable
 function dragNotes(e) {
-  var notes = []
   $('.container li').each(function(idx){
     if (!($(this).data('ui-draggable'))) {
       $(this).draggable()
@@ -155,11 +183,11 @@ function dragNotes(e) {
 }
 
 // publishAlert
-  function publishThis() {
-    $("#publishAlert").fadeIn()
-    setTimeout(function(){$("#publishAlert").fadeOut()}, 2000)
-    // alert("Your wall has been published!");
-  }
+function publishThis() {
+  $("#publishAlert").fadeIn()
+  setTimeout(function(){$("#publishAlert").fadeOut()}, 2000)
+  // alert("Your wall has been published!");
+}
 
 function changeBg(background){
   var bg_list = ['wallBackground0', 'wallBackground1', 'wallBackground2', 'wallBackground3', 'wallBackground4'];

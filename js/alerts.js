@@ -24,6 +24,7 @@ $(document).ready(function() {
     $("#saveAlert").hide()
     $("#alertNote").hide()
     $("#leaveAlert").hide()
+    $("#pubAlert").hide()
     currentUser = window.localStorage.getItem('currentUser')
     $(".jumbotronDesign3 #urName").text("Hello, "+currentUser +"!")
 })

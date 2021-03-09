@@ -32,10 +32,10 @@ function getNote(id){
     })
 }
 
-function updateNote(id, notes){
+function updateNote(id, notes, title){
     var ref = db.ref('notes/'+id)
     return new Promise((resolve, reject) => {
-        ref.set({"note":notes}).then(res => resolve(res)).catch(e => reject(e))
+        ref.set({"title": title, "note":notes}).then(res => resolve(res)).catch(e => reject(e))
     })
 }
 

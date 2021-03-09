@@ -91,7 +91,7 @@ app.post("/addNote", function(req, res){
 
 app.post('/updateNote', function(req, res){
   console.log(req.body)
-  updateNote(req.body.id, req.body.note).then(result => res.send('Success')).catch(e => res.status(400))
+  updateNote(req.body.id, req.body.note, req.body.title).then(result => res.send('Success')).catch(e => res.status(400))
 }) 
 
 // Example route
