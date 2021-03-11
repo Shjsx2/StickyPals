@@ -135,3 +135,16 @@ black: 0b0a08
       opacity: 1; 
    } 
 } 
+
+.helpButton{
+position:fixed;
+bottom:0px;
+right:0px;
+width:50px;
+height: 50px;
+color: #000000;
+}
+
+.helpButton:hover{
+  transform: rotate(10deg);
+}

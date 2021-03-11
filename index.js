@@ -71,6 +71,11 @@ app.get('/clearStorage', function(req, res){
   res.render('clearStorage')
 })
 
+app.get('/faq', function(req, res){
+	res.render('faq');
+
+})
+
 app.get('/viewNote/:id', function(req, res){
   var id = req.params.id
   console.log('requesting id '+id)
