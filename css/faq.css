@@ -1,0 +1,31 @@
+.question{
+
+  background-color: #ffffff00;
+  cursor: pointer;
+  padding: 5px;
+  padding-left: 30px;
+  width: 100%;
+  font-size:14px;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .question:hover {
+  background-color: #ccc;
+}
+
+.down:after {
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.answer {
+  padding: 0 10px;
+  padding-left: 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
