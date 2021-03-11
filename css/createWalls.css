@@ -88,7 +88,7 @@ ul li a:hover,ul li a:focus{
 #moreDropdown {
   display: none;
   position: absolute;
-  min-width: 112px;
+  max-width: 117px;
   right: 0px;
   background-color: #eeeeee;
   z-index: 1;

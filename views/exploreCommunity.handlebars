@@ -18,15 +18,18 @@
     <body class = "exploreCommunityBackground">
         {{!-- <div class = "exploreCommunityBackground" id="fullPage"> --}}
             <div class="headerWrap">
-                <p class = "headerFont">Community</p>
-                <img id='previous' src='../icons/L/next.png' style="position:absolute; left:7%;  top: 30px;">  
+                {{!-- <p class = "headerFont">Community</p> --}}
+                <p id='previous' style="position:absolute; left:7%;  top: 30px;font-family: Gill Sans, sans-serif; font-size:1.5em; cursor:pointer"> StickyPals</p>  
             </div>
-
+            <a style="display:inline; margin-left:2%;color:rgba(0, 0, 0, 0.493);text-decoration: underline; cursor:pointer" onclick="location.href='/index';">Sticky Pals</a>
+            <a style=" display:inline; color:rgba(0, 0, 0, 0.493);"> > Community</a>
             <div class="ripCommunity"></div>
             
             <div class="drawingContainer">
                 <p class = "headerFont2">View others' project ideas!</p>
+
                 <img src = '../assets/drawingPeopleTalking.png' id="ecDrawing1">
+                {{!-- <p class = "headerFont2">Click to view others' project ideas!</p> --}}
             </div>
 
             <div class = "flexContainer">

@@ -18,11 +18,15 @@
 
     <body class = "exploreCommunityBackground">
         <div class="headerWrap">
-            <p class = "headerFont">Gallery</p>
-            <img id='previous' src='../icons/L/next.png' style="position:absolute; left:7%;  top: 30px;">  
+            {{!-- <p class = "headerFont">Gallery</p> --}}
+            <p id='previous' style="position:absolute; left:7%;  top: 30px;font-family: Gill Sans, sans-serif; font-size:1.5em; cursor:pointer"> StickyPals</p>  
         </div>
+        <a style="display:inline; margin-left:2%; color:rgba(0, 0, 0, 0.493);text-decoration: underline; cursor:pointer" onclick="location.href='/index';">Sticky Pals</a>
+        <a style=" display:inline; color:rgba(0, 0, 0, 0.493);"> > Gallery</a>
         <div class="ripCommunity"></div>
+
         <div class = "drawingContainer">
+            {{!-- <p class = "headerFont2">Welcome to Gallery!</p> --}}
             <p class = "headerFont2">View your private and shared walls</p>
             <img src = '../assets/drawingLightbulb.png' id="vgDrawing1">
         </div>
