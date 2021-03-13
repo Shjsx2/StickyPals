@@ -157,3 +157,10 @@ color: #000000;
 .helpButton:hover{
   transform: rotate(10deg);
 }
+
+#logout{
+  position:fixed;
+  bottom:2%;
+  right:8%;
+  color:#17a2b8;
+}

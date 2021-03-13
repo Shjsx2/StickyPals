@@ -108,11 +108,12 @@ function onSaveClick() {
   window.localStorage.setItem('gallery', JSON.stringify(current))
 
   var url = window.location.href
-  if(url.includes('createWall')){
-    saveToDB(notes, wallTitle)
-  } else {
+  if(!url.includes('createWall')){
     var id = window.location.href.split('/')[4]
     updateNote(id, wallTitle, notes)
+  } else{
+    $('#publishAlert').fadeIn()
+      setTimeout(function(){$('#publishAlert').fadeOut()}, 2500)
   }
   // saveToDB(notes)
   
