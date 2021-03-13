@@ -18,6 +18,11 @@
 </head>
 
 <body>
+   {{!-- <div class = "loginImg">
+      <h2>StickyPals</h2>
+      <img id="splash" src = "../assets/splash.png">
+   </div> --}}
+
    <div class="container">
       <div class="loginText">
          <h1>StickyPals</h1>
@@ -43,7 +48,7 @@
       <div class="login-or">
          <hr class="hr-or">
          <div>
-            <p class="facebookLogin"> or login through Facebook
+            <p class="facebookLogin">login through Facebook
                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
                </fb:login-button>
 			   </p>
@@ -51,8 +56,12 @@
       </div>
    </div>
 
+      <div class= "bottomText">
       <div class="userInput">
          <p class="text-center">Don't have an account yet? <a href="#" id="createAccount" onclick="location.href='/signup';">create one</a></p>
+         <p class="text-center">Forget password? <a href="#" id="createAccount" onclick="location.href='/forgetpw';">fing your password</a></p>
+      </div>
+      
       </div>
    </form>
 				</div>

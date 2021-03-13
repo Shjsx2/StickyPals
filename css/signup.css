@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+    color: #17a2b8 !important;
+    font-family: "Gill Sans", sans-serif !important
+}
+
+.loginText {
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+.userInput {
+    margin-bottom: 2em;
+}
+
+.container {
+    height: 100%;
+    width: 30% !important;
+    bottom: 0px;
+}

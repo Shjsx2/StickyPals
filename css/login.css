@@ -9,11 +9,19 @@ h1 {
     margin-bottom: 2em;
 }
 
-html, body {
-    height: 100%;
+body{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
 }
 
-html {
+.container {
+    height: 100%;
+    width: 30%;
+    bottom: 0px;
+}
+
+/* html {
     display: table;
     margin: auto;
 }
@@ -21,7 +29,7 @@ body {
     margin-top: 5em;
     display: table-cell;
     vertical-align: center;
-}
+} */
 
 .userInput {
     margin-bottom: 2em;
@@ -34,3 +42,25 @@ body {
 #createAccount {
     color: #17a2b8;
 }
+
+.facebookLogin{
+    text-align: center;
+}
+
+/* .loginImg{
+    display: flex;
+    flex-direction: column;
+    background-image: url(../assets/wallTextures/hip_square.png);
+    width: 45%;
+    right: 0px;
+}
+
+h2{
+    font-family: "Gill Sans", sans-serif;
+}
+
+#splash {
+    height: 50%;
+    width: 100%;
+    align-self: center;
+} */

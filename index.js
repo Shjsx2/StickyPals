@@ -59,6 +59,10 @@ app.get('/signup', function(req,res){
   res.render('signup');
 })
 
+app.get('/forgetpw', function(req,res){
+  res.render('forgetpw');
+})
+
 app.get('/communityProject1', function(req,res){
   res.render('communityProject1');
 })
